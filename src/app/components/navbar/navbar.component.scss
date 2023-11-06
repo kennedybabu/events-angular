@@ -1,0 +1,41 @@
+.navbar {
+    height: 60px;
+    background-color: #212529;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 28px;
+
+    input {
+        border: none;
+        padding: 6px 12px;
+        // border-radius: ;
+
+        &:active, &:focus {
+            outline: none;
+            border: none;
+        }
+
+    }
+
+    #links {
+        color: #FFFFFF80;
+
+        a {
+            padding:0 6px;
+            cursor: pointer;
+        }
+
+    }
+
+    #icons {
+        color: #FFFFFF80;
+        display: flex;
+        align-items: center;
+
+        i {
+            font-size: 22px;
+            padding: 13px 15px;
+            cursor: pointer;
+        }
+    }
+}
