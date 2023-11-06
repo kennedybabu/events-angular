@@ -1,0 +1,21 @@
+.row {
+    margin:0 0 10px 0;
+    max-width: 546px;
+
+    li {
+        border: none;
+        outline: none;
+        transition: all ease .3s;
+        width: max-content;
+        padding: 5px 10px;
+        margin-right: 10px;  
+        border-radius: 5px;
+        list-style: none;
+        cursor: pointer;
+        background-color: #fff;
+
+        &:hover {
+            background-color: #ff7555;
+        }
+    }
+}

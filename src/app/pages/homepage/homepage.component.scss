@@ -1,3 +1,28 @@
 #homepage {
     padding: 32px 16px;
+
+    input {
+        &:active, &:focus {
+            outline: none;
+        }
+    }
+
+    .tile {
+        background-image: url(../../../assets/top.jpg);
+        position: relative;  
+        background-size: cover;
+        background-position: center;
+
+
+        .overlay {
+            z-index: 2;
+            background-color: #c4c4c40c;
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            padding: 40px 10px;
+            color: #ffffff;
+        }
+    }
 }

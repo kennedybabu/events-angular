@@ -1,5 +1,5 @@
-<div class="row" id="homepage">
-    <div class="container-fluid">
+<div class="container" id="homepage">
+    <div class="container">
         <div class="col-xs-12">
             <div class="row">
                 <div class="col-md-3">
@@ -7,11 +7,30 @@
                 </div>
     
                 <div class="col-md-6">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur dolor consequatur consectetur, excepturi id delectus ab cumque, minus atque quod deleniti!
+                    <div class="shadow rounded mb-5" id="main-search-bar" style="width: 546px;height: 145px;background-color: #ffffff;padding: 30px 20px;">
+                        <h3>Events happening in your city</h3>
+                        <div>
+                            <input style="padding: 5px 20px;margin: 0 5px;border-radius: 5px;border: 1px solid #a7a8aa;max-width: 200px;" type="text" placeholder="Search events">
+                            <input style="padding: 5px 20px;margin: 0 5px;border-radius: 5px;border: 1px solid #a7a8aa;max-width: 200px;" type="text" placeholder="Select Date">
+                            <button style="background-color: tomato;border-radius: 5px;border: none;padding: 6px 13px;margin: 0 5px;">Q</button>
+                        </div>
+                    </div>
+
+                    <app-buttons></app-buttons>
+
+                    <div class="row">
+                        <app-event></app-event>
+                    </div>
                 </div>
     
                 <div class="col-md-3">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi, et!
+                    <div class="shadow rounded text-center tile" style="width: 306px;height: 236px;">
+                        <div class="overlay text-center">
+                            <h3 style="font-size: 18px;font-weight: bold;">Want to post Your Event</h3>
+                            <p>Post your event on Genie for free. Just make an account and add it through the simple form. As simple as that.</p>
+                            <button class="rounded" style="border: none;outline: none;background-color: #ff7555;padding: 12px 20px;color: #ffffff;">Post It Now</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
