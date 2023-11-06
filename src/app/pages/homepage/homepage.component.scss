@@ -2,6 +2,9 @@
     padding: 32px 16px;
 
     input {
+        height: 40px;
+        min-width: 239px;
+
         &:active, &:focus {
             outline: none;
         }
