@@ -11,6 +11,7 @@ import { ButtonsComponent } from './components/buttons/buttons.component';
 import { EventComponent } from './components/event/event.component';
 import { WeatherComponent } from './components/weather/weather.component';
 import { CategoriesComponent } from './components/categories/categories.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { CategoriesComponent } from './components/categories/categories.componen
     ButtonsComponent,
     EventComponent,
     WeatherComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

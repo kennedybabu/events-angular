@@ -1,0 +1,51 @@
+.categories {
+    width: 306px;
+    height: 384px;
+    overflow-y: scroll;
+    position: relative;
+    margin-top: 1.5rem;
+
+
+    #header {
+        padding: 15px 20px;
+    }
+
+
+    .list {
+        height: 326px;
+        overflow-y: scroll;
+
+
+        div {
+            display: flex;
+            padding: 15px 20px;
+            color: #847577;
+            border-top: 1px solid #e6e6e6;
+            cursor: pointer;
+            align-items: center;
+    
+            p {
+                margin-bottom: 0;
+            }
+    
+            i {
+                margin: 0 .5rem;
+                color: rgb(85, 134, 134);
+                font-size: 1.2rem;
+            }
+    
+            
+            :hover {
+                color: #ff7555;
+            }
+        }
+    
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}

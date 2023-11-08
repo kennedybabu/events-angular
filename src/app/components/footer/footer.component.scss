@@ -1,0 +1,32 @@
+.footer {
+    padding: 23px 0;
+    background-color: #fafafa;
+    align-items: center;
+
+    .container {
+        .row {
+            display: flex;
+            justify-content: space-between;
+
+            .wrapper {
+                display: flex;
+                justify-content: space-between;
+                
+                div {
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+    
+                    a {
+                        margin: 0 15px;
+                    }
+    
+                    p {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+
+        }
+    }
+}
