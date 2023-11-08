@@ -28,4 +28,18 @@
             color: #ffffff;
         }
     }
+
+
+    #events {
+        padding-left: 1rem;
+
+        .col-6 {
+            width: 139px;
+            height: 114px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+        }
+    }
 }

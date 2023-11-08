@@ -1,0 +1,29 @@
+.weather {
+    padding: 20px;
+    display: flex;
+    width: 306px;
+    height: 326px;
+    margin: 1.5rem 0;
+    background-image: url(../../../assets/weather.jpg);
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+    color: #ffff;
+    
+    
+    .top-weather {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+
+        .weather-right {
+            display: flex;
+            align-items: flex-end;
+            flex-direction: column;
+        }
+    }
+
+
+    
+}

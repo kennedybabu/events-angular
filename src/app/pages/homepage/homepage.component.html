@@ -2,11 +2,11 @@
     <div class="container">
         <div class="col-xs-12">
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-3 left-container">
                     <app-user-card></app-user-card>
                 </div>
     
-                <div class="col-md-6">
+                <div class="col-md-6 main-content-container">
                     <div class="shadow rounded mb-5 w-100" id="main-search-bar" style="height: 145px;background-color: #ffffff;padding: 30px 20px;">
                         <h3>Events happening in your city</h3>
                         <div class="row" style="justify-content: center;">
@@ -17,26 +17,55 @@
                                 <input style="padding: 5px 20px;margin: 0 5px;border-radius: 5px;border: 1px solid #a7a8aa;max-width: 200px;" type="text" placeholder="Select Date">
                             </div>
                             <div class="col-lg-2 col-md-12 col-sm-12">
-                                <button style="background-color: #ff7555;border-radius: 5px;border: none;height: 40px;margin: 0 5px;width: 100%;">Q</button>
+                                <button style="background-color: #ff7555;border-radius: 5px;border: none;height: 40px;margin: 0 5px;width: 100%;">
+                                    <i class="bi bi-search"></i>
+                                </button>
                             </div>
                         </div>
                     </div>
 
                     <app-buttons></app-buttons>
 
-                    <div class="gap-4" style="display: flex;justify-content: space-between;">
+                    <div class="gap-2" style="display: flex;justify-content: space-between;flex-wrap: wrap;">
+                        <app-event></app-event>
+                        <app-event></app-event>
                         <app-event></app-event>
                         <app-event></app-event>
                     </div>
                 </div>
     
-                <div class="col-md-3">
+                <div class="col-md-3 right-container">
                     <div class="shadow rounded text-center tile" style="width: 306px;height: 236px;">
                         <div class="overlay text-center">
                             <h3 style="font-size: 18px;font-weight: bold;">Want to post Your Event</h3>
                             <p>Post your event on Genie for free. Just make an account and add it through the simple form. As simple as that.</p>
                             <button class="rounded" style="border: none;outline: none;background-color: #ff7555;padding: 12px 20px;color: #ffffff;">Post It Now</button>
                         </div>
+                    </div>
+
+                    <div>
+                        <h3 style="margin-top: 2rem;margin-bottom: 1rem;">Explore Events</h3>
+
+                        <div id="events">
+                            <div class="row gap-3 mb-3">
+                                <div style="background-color: #0d6dfdb4;" class="col-6 shadow-sm">
+                                    Today
+                                </div>
+                                <div style="background-color: #ffc107bb;" class="col-6 shadow-sm">
+                                    Tomorrow
+                                </div>
+                            </div>
+                            <div class="row gap-3">
+                                <div style="background-color: #6710f2a6;" class="col-6 shadow-sm">
+                                    This Week
+                                </div>
+                                <div style="background-color: #f1f1f193;" class="col-6 shadow-sm">
+                                    Choose Date
+                                </div>
+                            </div>
+                        </div>
+
+                        <app-weather></app-weather>
                     </div>
                 </div>
             </div>

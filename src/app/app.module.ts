@@ -9,6 +9,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { UserCardComponent } from './components/user-card/user-card.component';
 import { ButtonsComponent } from './components/buttons/buttons.component';
 import { EventComponent } from './components/event/event.component';
+import { WeatherComponent } from './components/weather/weather.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { EventComponent } from './components/event/event.component';
     NavbarComponent,
     UserCardComponent,
     ButtonsComponent,
-    EventComponent
+    EventComponent,
+    WeatherComponent
   ],
   imports: [
     BrowserModule,
