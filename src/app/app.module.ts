@@ -10,6 +10,7 @@ import { UserCardComponent } from './components/user-card/user-card.component';
 import { ButtonsComponent } from './components/buttons/buttons.component';
 import { EventComponent } from './components/event/event.component';
 import { WeatherComponent } from './components/weather/weather.component';
+import { CategoriesComponent } from './components/categories/categories.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { WeatherComponent } from './components/weather/weather.component';
     UserCardComponent,
     ButtonsComponent,
     EventComponent,
-    WeatherComponent
+    WeatherComponent,
+    CategoriesComponent
   ],
   imports: [
     BrowserModule,
