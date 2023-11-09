@@ -18,6 +18,7 @@ import { CreateEventComponent } from './components/create-event/create-event.com
 import { UserProfileComponent } from './pages/user-profile/user-profile.component';
 import { DashButtonsComponent } from './components/dash-buttons/dash-buttons.component';
 import { StatsComponent } from './components/stats/stats.component';
+import { EventDraftComponent } from './components/event-draft/event-draft.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { StatsComponent } from './components/stats/stats.component';
     CreateEventComponent,
     UserProfileComponent,
     DashButtonsComponent,
-    StatsComponent
+    StatsComponent,
+    EventDraftComponent
   ],
   imports: [
     BrowserModule,
