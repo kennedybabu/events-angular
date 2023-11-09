@@ -16,6 +16,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { CreateEventComponent } from './components/create-event/create-event.component';
 import { UserProfileComponent } from './pages/user-profile/user-profile.component';
+import { DashButtonsComponent } from './components/dash-buttons/dash-buttons.component';
+import { StatsComponent } from './components/stats/stats.component';
 
 
 @NgModule({
@@ -30,7 +32,9 @@ import { UserProfileComponent } from './pages/user-profile/user-profile.componen
     CategoriesComponent,
     FooterComponent,
     CreateEventComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    DashButtonsComponent,
+    StatsComponent
   ],
   imports: [
     BrowserModule,

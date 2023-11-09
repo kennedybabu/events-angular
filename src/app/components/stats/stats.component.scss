@@ -1,0 +1,30 @@
+.row {
+    padding: .5rem;
+    justify-content: space-between;
+
+
+    .col-lg-6 {
+        background-color: #e8f7f7;
+        border-radius: 5px;
+        padding: 1rem;
+        height: 163px;
+        max-width: 24%;
+        color: #313131;
+
+        span {
+            font-size: 14px;
+            margin: 10px 0;
+        }
+
+        h2 {
+            margin-top: 10px;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        small {
+            color: #847577;
+            font-size: 14px;
+        }
+    }
+}
