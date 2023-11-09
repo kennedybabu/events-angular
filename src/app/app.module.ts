@@ -13,6 +13,11 @@ import { WeatherComponent } from './components/weather/weather.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { FooterComponent } from './components/footer/footer.component';
 
+import {MatDialogModule} from '@angular/material/dialog';
+import { CreateEventComponent } from './components/create-event/create-event.component';
+import { UserProfileComponent } from './pages/user-profile/user-profile.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,12 +28,15 @@ import { FooterComponent } from './components/footer/footer.component';
     EventComponent,
     WeatherComponent,
     CategoriesComponent,
-    FooterComponent
+    FooterComponent,
+    CreateEventComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

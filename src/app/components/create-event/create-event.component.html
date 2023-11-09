@@ -1,0 +1,40 @@
+<div class="create-event">
+    <h3 style="font-weight: bold;color: #ff7555;">Add An Event</h3>
+    <form>
+        <div class="img mb-2">
+            <div class="file">
+                <!-- <label for="file">Label</label> -->
+                <input type="file" name="file" style="display: none;">
+                <p class="mb-0"><i class="bi bi-image"></i><span class="mx-5">Upload Cover Image</span></p>
+            </div>
+            <small>We recommend using a photo that is 1200X628 pixels.</small>
+        </div>
+        <div class="form-group mb-2">
+            <label for="name">Name*</label>
+            <input type="text" placeholder="Enter Event Name" class="form-control" id="name">
+        </div>
+
+        <div class="form-group mb-3">
+            <label for="date">Start Date*</label>
+            <input type="datetime-local"  class="form-control" id="date">
+        </div>
+
+        <div class="form-group mb-2">
+            <label for="body">Description*</label>
+            <textarea name="body" id="" placeholder="Description" class="form-control" cols="30" rows="5"></textarea>
+        </div>
+
+        <div class="form-group mb-2">
+            <label for="ticket_price">Price*</label>
+            <input type="text" placeholder="Ticket Price" class="form-control" id="ticket_price">
+        </div>
+
+        <div class="form-group mb-2">
+            <label for="age">Age*</label>
+            <input type="text" placeholder="Enter Age Limit" class="form-control" id="age">
+        </div>
+
+        <button class="w-100" style="background-color: #ff7555;border: none;outline: none;border-radius: 5px;height: 40px;color: #ffff;">Create Event</button>
+    </form>
+
+</div>
