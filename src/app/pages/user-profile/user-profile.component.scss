@@ -1,5 +1,4 @@
 .user-profile {
-    // padding: 32px 16px;
 
     .header-bg {
         height: 260px;
@@ -7,7 +6,6 @@
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
-        // background-color: rgba(255, 99, 71, 0.295);
         position: relative;
 
         a {
@@ -51,6 +49,10 @@
                     margin-right: 7px;
                     padding: 10px 9px;
                     cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: #ff7555;
                 }
             }
         }

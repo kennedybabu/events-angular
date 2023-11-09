@@ -37,22 +37,22 @@
                             <h4 style="font-weight: bold;margin-top: 37px;">Find Me On</h4>
                             <div class="profile-social-links">
                                 <div class="icon hover-actions">
-                                    f
+                                    <i class="bi bi-facebook"></i>
                                 </div>
                                 <div class="icon hover-actions">
-                                    in
+                                    <i class="bi bi-instagram"></i>
                                 </div>
                                 <div class="icon hover-actions">
-                                    x
+                                    <i class="bi bi-twitter-x"></i>
                                 </div>
                                 <div class="icon hover-actions">
-                                    in
+                                    <i class="bi bi-linkedin"></i>
                                 </div>
                                 <div class="icon hover-actions">
-                                    y
+                                    <i class="bi bi-youtube"></i>
                                 </div>
                                 <div class="icon hover-actions">
-                                    t
+                                    <i class="bi bi-dribbble"></i>
                                 </div>
                             </div>
                         </div>
@@ -61,11 +61,28 @@
                 <div class="col-md-12 col-lg-7 col-xl-8">
                     <app-dash-buttons></app-dash-buttons>
                     <app-stats></app-stats>
-                    <div style="padding: 20px;" class="d-flex gap-3 flex-wrap">
-                        <app-event></app-event>
-                        <app-event></app-event>
-                        <app-event></app-event>
-                        <app-event></app-event>                       
+                    <div class="my-4 shadow-sm rounded">
+                        <div class="header-wrapper" style="display: flex;justify-content: space-between;align-items: center;border-bottom: 1px solid #e6e6e6;padding: 12px;">
+                            <h3 style="margin-bottom: 0;font-weight: bold;font-size: 18px;">Events</h3>
+                            <button style="background-color: #ff7555;border-radius: 5px;color: #ffff;height: 40px;line-height: 14px;border: none;">Create</button>
+                        </div>
+                        <div style="display: flex;align-items: center;padding: 20px;border-bottom: 1px solid #e6e6e6;">
+                            <div>
+                                <input type="text" placeholder="Search event" style="border: none;">
+                            </div>
+                            <div>
+                                
+                            </div>
+                            <div>
+
+                            </div>
+                        </div>
+                        <div style="padding: 20px;" class="d-flex gap-3 flex-wrap">                      
+                            <app-event></app-event>
+                            <app-event></app-event>
+                            <app-event></app-event>
+                            <app-event></app-event>                       
+                        </div>
                     </div>
                 </div>
             </div>
