@@ -6,15 +6,15 @@
         <div class="right col-12 col-md-5 col-xs-6 text-center" style="padding: 40px;display: flex;justify-content: center;flex-direction: column;height: 100%;">
             <h3 style="font-weight: bold;">Sign Up to Genie</h3>
             <div>
-                <form>
+                <form [formGroup]="loginForm" (submit)="onFormSubmit()">
                     <div class="form-group mb-2">
-                        <input type="text" placeholder="Username" class="form-control">
+                        <input type="text" formControlName="email" placeholder="Username" class="form-control">
                     </div>
                     <div class="form-group mb-2">
-                        <input type="password" placeholder="Password" class="form-control">
+                        <input type="password" formControlName="password" placeholder="Password" class="form-control">
                     </div>                        
                     <div class="my-2">
-                        <button style="background-color: #ff7555;border-radius: 5px;padding: 10px;border: none;color: #fff;width: 100%;">Login</button>
+                        <button type="submit"  style="background-color: #ff7555;border-radius: 5px;padding: 10px;border: none;color: #fff;width: 100%;">Login</button>
                     </div>
                     <small>If you don't have an account? <span style="cursor: pointer;color: #ff7555;" routerLink="/signup">Signup</span></small>
                 </form>
