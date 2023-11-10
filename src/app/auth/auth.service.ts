@@ -39,9 +39,11 @@ export class AuthService {
                 const access_token = res.access
                 const refresh_token = res.refresh 
                 const user = res.user
+
                 this.userDataSubject.next({access_token, refresh_token, user})
                 localStorage.setItem(this.ACCESS_TOKEN, access_token)
                 localStorage.setItem(this.REFRESH_TOKEN, refresh_token)
+                localStorage.setItem('user', JSON.stringify(user))
                 return res
             })
         )

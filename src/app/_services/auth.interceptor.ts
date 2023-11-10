@@ -15,11 +15,11 @@ export class AuthInterceptor implements HttpInterceptor {
   constructor(private authService:AuthService) {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    if(request.url.indexOf('/auth/refresh') !== -1) {
+    if(request.url.indexOf('/auth/refresh/') !== -1) {
       return next.handle(request)
     }
-    const data = this.authService.userData
-    const access_token = data?.access 
+    const data = this.authService.userData 
+    const access_token = data?.access_token 
 
     if(access_token) {
       if(this.authService.isAuthTokenValid(access_token)) {
@@ -28,6 +28,7 @@ export class AuthInterceptor implements HttpInterceptor {
         })
         return next.handle(modifiedReq)
       }
+
       return this.authService.generateNewTokens() 
         .pipe(
           take(1), 
