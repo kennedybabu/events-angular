@@ -87,4 +87,10 @@ export class AuthService {
         }
         return true
     }
+
+
+    getUserDataFromToken(token: string): any {
+        const decoded: any = jwtDecode(token)
+        return decoded.data
+    }
 }
