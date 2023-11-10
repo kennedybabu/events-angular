@@ -19,6 +19,8 @@ import { UserProfileComponent } from './pages/user-profile/user-profile.componen
 import { DashButtonsComponent } from './components/dash-buttons/dash-buttons.component';
 import { StatsComponent } from './components/stats/stats.component';
 import { EventDraftComponent } from './components/event-draft/event-draft.component';
+import { LoginComponent } from './pages/login/login.component';
+import { SignupComponent } from './pages/signup/signup.component';
 
 
 @NgModule({
@@ -36,7 +38,9 @@ import { EventDraftComponent } from './components/event-draft/event-draft.compon
     UserProfileComponent,
     DashButtonsComponent,
     StatsComponent,
-    EventDraftComponent
+    EventDraftComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

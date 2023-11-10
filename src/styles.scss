@@ -13,4 +13,24 @@ body {
             color: #ffff!important;
         }
     }
+
+    .auth-wrapper {
+        min-height: 80%;
+
+        .row {
+            height: 70%;
+        }
+    }
+
+    // .input-outline {
+    //     transition: all ease .3s;
+    //     outline: none;
+    //     border: none;
+    //     border-radius: 5px;
+        
+
+    //     &:hover {
+    //         border:1px solid #ff7555;
+    //     }
+    // }
  }
