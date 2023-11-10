@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AuthService } from 'src/app/auth/auth.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ export class LoginComponent implements OnInit {
   // loginForm!: FormGroup  
   requestData$!: Observable<any>
 
-  constructor(private authService: AuthService){}
+  constructor(private authService: AuthService, private router: Router){}
 
   loginForm = new FormGroup({
     email: new FormControl('', Validators.email),
@@ -29,7 +30,9 @@ export class LoginComponent implements OnInit {
     console.log(this.loginForm.value)
     const formData: any = this.loginForm.value 
     this.authService.login(formData?.email, formData?.password).subscribe((res) => {
-      console.log(res)
+      if(res?.access && res?.refresh) {
+        this.router.navigate(['/'])
+      }
     }, (err) => {
       console.log(err)
     })

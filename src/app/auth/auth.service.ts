@@ -46,4 +46,45 @@ export class AuthService {
             })
         )
     }
+
+
+    logout(): void {
+        localStorage.removeItem(this.ACCESS_TOKEN)
+        localStorage.removeItem(this.REFRESH_TOKEN)
+        this.userDataSubject.next(null)
+    }
+
+
+    generateNewTokens(): Observable<HttpEvent<any>> {
+        const refresh_token = this.userDataSubject.value?.refresh_token 
+        return this.http.post(`${environment.apiBaseUrl}/auth/refresh`, { refresh_token }).pipe(
+            map((res: any) => {
+                const access_token = res?.access_token 
+                const refresh_token = res?.refresh_token 
+                const user = res?.user
+                this.userDataSubject.next({access_token, refresh_token, user })
+                return res
+            })
+        )
+    }
+
+
+    get isAuthenticated(): boolean {
+        const refresh_token = this.userDataSubject.value?.refresh_token 
+        if(!refresh_token) {
+            return false
+        }
+        return this.isAuthTokenValid(refresh_token)
+    }
+
+    isAuthTokenValid(token: string): boolean {
+        const decoded: any = jwtDecode(token)
+
+        const expMilSecond: number = decoded?.exp * 1000 
+        const currentTime = Date.now()
+        if(expMilSecond < currentTime){
+            return false
+        }
+        return true
+    }
 }
