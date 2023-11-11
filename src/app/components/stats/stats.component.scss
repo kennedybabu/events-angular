@@ -10,6 +10,7 @@
         height: 163px;
         max-width: 24%;
         color: #313131;
+        cursor: pointer;
 
         span {
             font-size: 14px;
@@ -25,6 +26,11 @@
         small {
             color: #847577;
             font-size: 14px;
+        } 
+
+        i {
+            font-size: 1.3rem;
+            color: #847577;
         }
     }
 }

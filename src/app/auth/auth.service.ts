@@ -63,12 +63,12 @@ export class AuthService {
         return this.http.post(`${environment.apiBaseUrl}/auth/refresh`, { refresh_token }).pipe(
             map((res: any) => {
                 console.log('called inside tokens')
-                const access_token = res?.access_token 
-                const refresh_token = res?.refresh_token 
-                const user = res?.user
+                const access_token = res?.access 
+                const refresh_token = res?.refresh
+               
                 localStorage.setItem(this.ACCESS_TOKEN, access_token)
                 localStorage.setItem(this.REFRESH_TOKEN, refresh_token)
-                this.userDataSubject.next({access_token, refresh_token, user })
+                this.userDataSubject.next({access_token, refresh_token})
                 return res
             })
         )
