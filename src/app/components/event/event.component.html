@@ -6,8 +6,8 @@
         </div>
     </div>
     <div class="bottom">
-        <p style="font-size: 12px;color: #847577;text-transform: uppercase">Thur, 30 JUNE 2022 AT 3.00PM</p>
-        <h3 class='title' style="font-size: 16px;margin-bottom: 7px;color: #313131;">Event Title</h3>
+        <p style="font-size: 12px;color: #847577;text-transform: uppercase">{{ event.date | date: 'fullDate' }}</p>
+        <h3 class='title' style="font-size: 16px;margin-bottom: 7px;color: #313131;">{{ event.body | uppercase }}</h3>
         <p style="font-size: 14px;color: #847577;">Race Course</p>
         <p style="font-size: 14px;color: #847577;">25 Interested . 11 Going</p>
         <div class="row gap-2 px-2">

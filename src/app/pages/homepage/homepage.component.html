@@ -28,14 +28,7 @@
                     <app-buttons></app-buttons>
 
                     <div class="gap-2" style="display: flex;justify-content: space-between;flex-wrap: wrap;">
-                        <app-event></app-event>
-                        <app-event></app-event>
-                        <app-event></app-event>
-                        <app-event></app-event>
-                        <app-event></app-event>
-                        <app-event></app-event>
-                        <app-event></app-event>
-                        <app-event></app-event>
+                        <app-event *ngFor="let event of events" [event]="event"></app-event>                      
                     </div>
                 </div>
     

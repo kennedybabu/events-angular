@@ -58,12 +58,16 @@ export class AuthService {
 
 
     generateNewTokens(): Observable<HttpEvent<any>> {
+        console.log('called token')
         const refresh_token = this.userDataSubject.value?.refresh_token 
         return this.http.post(`${environment.apiBaseUrl}/auth/refresh`, { refresh_token }).pipe(
             map((res: any) => {
+                console.log('called inside tokens')
                 const access_token = res?.access_token 
                 const refresh_token = res?.refresh_token 
                 const user = res?.user
+                localStorage.setItem(this.ACCESS_TOKEN, access_token)
+                localStorage.setItem(this.REFRESH_TOKEN, refresh_token)
                 this.userDataSubject.next({access_token, refresh_token, user })
                 return res
             })
