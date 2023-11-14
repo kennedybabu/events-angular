@@ -22,15 +22,11 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.requestData$ = this.authService.userData$ 
-
   }
 
   onFormSubmit(): void {
-    console.log(this.loginForm.value)
     const formData: any = this.loginForm.value 
     this.authService.login(formData?.email, formData?.password).subscribe((res) => {
-      console.log(res)
       if(res?.access && res?.refresh) {
         this.router.navigate(['/'])
       }

@@ -2,7 +2,10 @@
 
 html, body { height: 100%; }
 body { 
-    margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-color: rgb(245, 245, 245);
+
 
     .hover-actions {
         transition: all ease .3s;
@@ -16,8 +19,9 @@ body {
 
     .auth-wrapper {
         min-height: 80%;
-
+        
         .row {
+            background-color: #ffff;
             height: 70%;
         }
     }

@@ -19,12 +19,12 @@ export class AuthService {
     private userDataSubject: BehaviorSubject<any> = new BehaviorSubject(null)
     userData$: Observable<any> = this.userDataSubject.asObservable()
 
+
     constructor(private http:HttpClient) {
         if(localStorage.getItem(this.ACCESS_TOKEN) && localStorage.getItem(this.REFRESH_TOKEN)) {
             const access_token = (<string>localStorage.getItem(this.ACCESS_TOKEN))
             const refresh_token = (<string>localStorage.getItem(this.REFRESH_TOKEN))
-            this.userDataSubject.next({access_token, refresh_token})       
-
+            this.userDataSubject.next({access_token, refresh_token})
         }
     }
 
@@ -32,6 +32,7 @@ export class AuthService {
     get userData(): any {
         return this.userDataSubject.value
     }
+
 
     login(email: string, password: string): Observable<any> {
         return this.http.post(`${environment.apiBaseUrl}/auth/login/`, { email,password}).pipe(
@@ -57,24 +58,6 @@ export class AuthService {
     }
 
 
-    generateNewTokens(): Observable<HttpEvent<any>> {
-        console.log('called token')
-        const refresh_token = this.userDataSubject.value?.refresh_token 
-        return this.http.post(`${environment.apiBaseUrl}/auth/refresh`, { refresh_token }).pipe(
-            map((res: any) => {
-                console.log('called inside tokens')
-                const access_token = res?.access 
-                const refresh_token = res?.refresh
-               
-                localStorage.setItem(this.ACCESS_TOKEN, access_token)
-                localStorage.setItem(this.REFRESH_TOKEN, refresh_token)
-                this.userDataSubject.next({access_token, refresh_token})
-                return res
-            })
-        )
-    }
-
-
     get isAuthenticated(): boolean {
         const refresh_token = this.userDataSubject.value?.refresh_token 
         if(!refresh_token) {
@@ -82,6 +65,7 @@ export class AuthService {
         }
         return this.isAuthTokenValid(refresh_token)
     }
+
 
     isAuthTokenValid(token: string): boolean {
         const decoded: any = jwtDecode(token)
@@ -93,10 +77,29 @@ export class AuthService {
         }
         return true
     }
+  
 
+    generateNewTokens(): Observable<HttpEvent<any>> {
+        const refresh_token = localStorage.getItem('refresh_token')
+        // console.log(refresh_token)
+        return this.http.post(`${environment.apiBaseUrl}/auth/refresh/`, { "refresh": refresh_token }).pipe(
+            map((res: any) => {
+                console.log('called inside tokens')
+                const access_token = res.access  
+                console.log(access_token)              
+                this.userDataSubject.next({access_token})
+                localStorage.setItem(this.ACCESS_TOKEN, access_token)
+                console.log("res", res)
+                return res
+            })
+        )
+    }
+    
 
     getUserDataFromToken(token: string): any {
         const decoded: any = jwtDecode(token)
         return decoded.data
     }
+
+
 }

@@ -5,11 +5,14 @@ import { UserProfileComponent } from './pages/user-profile/user-profile.componen
 import { SignupComponent } from './pages/signup/signup.component';
 import { LoginComponent } from './pages/login/login.component';
 import { AuthGuard } from './_guard/auth.guard';
+import { EventComponent } from './pages/event/event.component';
+
 
 const routes: Routes = [
   {path:'', component: HomepageComponent, canActivate: [AuthGuard]},
   {path:'user-profile', component: UserProfileComponent, canActivate: [AuthGuard]},
-  {path: 'auth', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)},
+  {path:'auth', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)},
+  {path:'event',component: EventComponent},
   {path:'signup', component: SignupComponent},
   {path:'login', component: LoginComponent},
 
