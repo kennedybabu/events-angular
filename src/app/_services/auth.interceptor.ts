@@ -18,14 +18,14 @@ export class AuthInterceptor implements HttpInterceptor {
     if(request.url.indexOf('/auth/refresh/') !== -1) {
       return next.handle(request)
     }
-    // const data = this.authService.userData 
-    const access_token = localStorage.getItem('access_token') 
+    const data = this.authService.userData 
+    // const access_token = localStorage.getItem('access_token') 
 
-    if(access_token) {
-      if(this.authService.isAuthTokenValid(access_token)) {
+    if(data) {
+      if(this.authService.isAuthTokenValid(data.access_token)) {
         console.log('called -1')
         let modifiedReq = request.clone({
-          headers: request.headers.set('Authorization', `Bearer ${access_token}`)
+          headers: request.headers.set('Authorization', `Bearer ${data.access_token}`)
         })
         return next.handle(modifiedReq)
       }
