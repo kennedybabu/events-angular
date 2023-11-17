@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { BehaviorSubject, Observable } from "rxjs";
 import { environment } from "src/environment/environment";
-import { map } from "rxjs/operators"
+import { catchError, map } from "rxjs/operators"
 import { jwtDecode } from "jwt-decode";
 import { HttpClient, HttpEvent } from '@angular/common/http';
 
@@ -80,17 +80,20 @@ export class AuthService {
   
 
     generateNewTokens(): Observable<HttpEvent<any>> {
-        const refresh_token = localStorage.getItem('refresh_token')
-        // console.log(refresh_token)
-        return this.http.post(`${environment.apiBaseUrl}/auth/refresh/`, { "refresh": refresh_token }).pipe(
+        const refresh_token = localStorage.getItem('refresh_token') 
+        console.log('invalid token, called')
+        return this.http.post(`${environment.apiBaseUrl}/auth/refresh/`, 
+        { "refresh": refresh_token }).pipe(
             map((res: any) => {
                 console.log('called inside tokens')
-                const access_token = res.access  
-                console.log(access_token)              
+                const access_token = res.access 
                 this.userDataSubject.next({access_token})
                 localStorage.setItem(this.ACCESS_TOKEN, access_token)
-                console.log("res", res)
                 return res
+            }),
+            catchError((error) => {
+                console.log(error)
+                throw error
             })
         )
     }
@@ -100,6 +103,5 @@ export class AuthService {
         const decoded: any = jwtDecode(token)
         return decoded.data
     }
-
 
 }

@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-event',
@@ -7,6 +8,15 @@ import { Component, Input } from '@angular/core';
 })
 export class EventComponent {
 
-  @Input() event!: any
+  @Input() event!: any 
+
+  constructor(private router:Router){}
+
+
+  viewEventDetails(){
+    this.router.navigate([`/event/${this.event?.id}`])
+  }
+
+  
 
 }

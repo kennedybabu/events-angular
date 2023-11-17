@@ -7,7 +7,7 @@ import {
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { AuthService } from '../auth/auth.service';
-import { take, switchMap } from 'rxjs/operators';
+import { take, switchMap, mergeMap } from 'rxjs'
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
@@ -30,13 +30,14 @@ export class AuthInterceptor implements HttpInterceptor {
         return next.handle(modifiedReq)
       }
 
-    return this.authService.generateNewTokens() 
-        .pipe(
+
+    return this.authService.generateNewTokens().pipe(
           take(1), 
           switchMap((res: any) => {
             console.log('gen token')
+            let token = res.access
             let modifiedReq = request.clone({
-              headers: request.headers.set('Authorization', `Bearer ${res.access}`)
+              headers: request.headers.set('Authorization', `Bearer ${token}`)
             })
             return next.handle(modifiedReq)
           })

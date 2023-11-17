@@ -28,7 +28,6 @@ export class HomepageComponent implements OnInit {
 
     if(this.user) {
       this.userId = JSON.parse(this.user).id  
-      console.log(this.userId) 
       this.fetchUserDetails(this.userId)
       this.fetchEvents()
     }    
@@ -36,6 +35,7 @@ export class HomepageComponent implements OnInit {
   
   fetchUserDetails(params:any){
     this.http.get(`${environment.apiBaseUrl}/user/${params}/`).subscribe((res) => {
+      console.log(res)
       this.user = res
     })  
     

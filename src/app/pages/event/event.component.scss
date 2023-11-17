@@ -1,0 +1,42 @@
+.event-wrapper {
+    .main-card {
+        .event-detail-content {
+            background-color: #ffff;
+
+            .event-img {
+                height: 394px;
+                background-image: url(../../../assets/weather.jpg);
+                border-radius: 5px 5px 0 0;
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+
+
+            button {
+                padding: 5px 20px;
+                border-radius: 5px;
+                margin: 0 0 0 .4rem;
+                outline: none;
+                border: 1px solid #c0c0c0;
+                background-color: #fff;
+            }
+
+            .date {
+                padding: 10px 0;
+                background-color: #fff;
+                position: absolute;
+                bottom: 15px;
+                left: 15px;
+                width: 70px;
+                height: 70px;
+                justify-content: space-around;
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                border-radius: 3px;
+                border-top: 4px solid #ff7555;
+            }
+        }
+    }
+}
