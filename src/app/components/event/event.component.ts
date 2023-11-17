@@ -12,11 +12,8 @@ export class EventComponent {
 
   constructor(private router:Router){}
 
-
   viewEventDetails(){
     this.router.navigate([`/event/${this.event?.id}`])
-  }
-
-  
+  }  
 
 }

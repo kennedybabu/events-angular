@@ -15,6 +15,7 @@ export class AuthService {
 
     ACCESS_TOKEN = 'access_token'
     REFRESH_TOKEN = 'refresh_token'
+    USER = 'user'
 
     private userDataSubject: BehaviorSubject<any> = new BehaviorSubject(null)
     userData$: Observable<any> = this.userDataSubject.asObservable()
@@ -24,7 +25,8 @@ export class AuthService {
         if(localStorage.getItem(this.ACCESS_TOKEN) && localStorage.getItem(this.REFRESH_TOKEN)) {
             const access_token = (<string>localStorage.getItem(this.ACCESS_TOKEN))
             const refresh_token = (<string>localStorage.getItem(this.REFRESH_TOKEN))
-            this.userDataSubject.next({access_token, refresh_token})
+            const user = (<string>localStorage.getItem(this.USER))
+            this.userDataSubject.next({access_token, refresh_token, user})
         }
     }
 
@@ -81,7 +83,7 @@ export class AuthService {
 
     generateNewTokens(): Observable<HttpEvent<any>> {
         const refresh_token = localStorage.getItem('refresh_token') 
-        console.log('invalid token, called')
+        console.log('invalid token, called ---')
         return this.http.post(`${environment.apiBaseUrl}/auth/refresh/`, 
         { "refresh": refresh_token }).pipe(
             map((res: any) => {

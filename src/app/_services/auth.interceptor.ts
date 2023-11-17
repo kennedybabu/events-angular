@@ -15,9 +15,9 @@ export class AuthInterceptor implements HttpInterceptor {
   constructor(private authService:AuthService) {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    // if(request.url.indexOf('/auth/refresh/') !== -1) {
-    //   return next.handle(request)
-    // }
+    if(request.url.indexOf('/auth/refresh/') !== -1) {
+      return next.handle(request)
+    }
     // const data = this.authService.userData 
     const access_token = localStorage.getItem('access_token') 
 
