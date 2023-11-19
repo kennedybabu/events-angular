@@ -25,6 +25,7 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { AuthInterceptor } from './_services/auth.interceptor';
+import { MonthDayPipe } from './month-day.pipe';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { AuthInterceptor } from './_services/auth.interceptor';
     StatsComponent,
     EventDraftComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    MonthDayPipe
   ],
   imports: [
     BrowserModule,

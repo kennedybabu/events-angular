@@ -11,7 +11,7 @@
         </div>
     </div>
     <div class="text-center" style="margin-top: 60px;">
-        <h3 class="mb-0">{{user.first_name}} {{user.last_name}}</h3>
+        <h3 class="mb-0 accent-color">{{user.first_name}} {{user.last_name}}</h3>
         <small style="color: #a7a8aa;"><i style="color: tomato;" class="bi bi-geo-alt"></i> Kenya</small>
         <div class="my-2" style="display: flex;height: 50px;">
             <div style="border-right: 1px solid #a7a8aa;width: 100%;">
@@ -23,6 +23,6 @@
                 <p style="color: #a7a8aa;">1</p>
             </div>
         </div>
-        <h3 style="cursor: pointer;" class="mt-4" routerLink="user-profile">View Profile</h3>
+        <h3 style="cursor: pointer;" class="mt-4 accent-color" (click)="viewUserProfile()">View Profile</h3>
     </div>
 </div>

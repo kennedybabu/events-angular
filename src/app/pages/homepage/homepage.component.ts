@@ -50,11 +50,13 @@ export class HomepageComponent implements OnInit {
   }
 
   openDialog() {
-    this.dialog.open(CreateEventComponent, {
-      data: {
-        animal: 'panda',
-      },
+    const dialogRef = this.dialog.open(CreateEventComponent, {
+           
     });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.fetchEvents()
+    })
   }
 
 

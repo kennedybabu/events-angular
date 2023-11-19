@@ -27,4 +27,14 @@ body {
         }
     }
 
+
+    .accent-color {
+        transition:all ease-in .2s;
+        cursor: pointer;
+
+        &:hover {
+            color: #ff7555!important;
+        }
+    }
+
  }

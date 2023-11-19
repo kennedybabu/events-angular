@@ -1,6 +1,6 @@
 <div class="create-event">
     <h3 style="font-weight: bold;color: #ff7555;">Add An Event</h3>
-    <form>
+    <form (submit)="onFormSubmit()" [formGroup]="eventForm">
         <div class="img mb-2">
             <div class="file">
                 <!-- <label for="file">Label</label> -->
@@ -11,27 +11,27 @@
         </div>
         <div class="form-group mb-2">
             <label for="name">Name*</label>
-            <input type="text" placeholder="Enter Event Name" class="form-control" id="name">
+            <input type="text" formControlName="body" placeholder="Enter Event Name" class="form-control" id="name">
         </div>
 
         <div class="form-group mb-3">
             <label for="date">Start Date*</label>
-            <input type="datetime-local"  class="form-control" id="date">
+            <input type="datetime-local" formControlName="date"  class="form-control" id="date">
         </div>
 
-        <div class="form-group mb-2">
+        <!-- <div class="form-group mb-2">
             <label for="body">Description*</label>
             <textarea name="body" id="" placeholder="Description" class="form-control" cols="30" rows="5"></textarea>
-        </div>
+        </div> -->
 
         <div class="form-group mb-2">
             <label for="ticket_price">Price*</label>
-            <input type="text" placeholder="Ticket Price" class="form-control" id="ticket_price">
+            <input type="text" placeholder="Ticket Price" formControlName="ticket_price" class="form-control" id="ticket_price">
         </div>
 
         <div class="form-group mb-2">
             <label for="age">Age*</label>
-            <input type="text" placeholder="Enter Age Limit" class="form-control" id="age">
+            <input type="text" placeholder="Enter Age Limit" formControlName="age_limit" class="form-control" id="age">
         </div>
 
         <button class="w-100" style="background-color: #ff7555;border: none;outline: none;border-radius: 5px;height: 40px;color: #ffff;">Create Event</button>
