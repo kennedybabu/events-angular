@@ -12,7 +12,7 @@
         <p style="font-size: 14px;color: #847577;">{{ event?.likes_count + event?.attending_count }} Interested . {{ event?.attending_count }} Going</p>
         <div class="row gap-2 px-2">
             <button class="col-7">
-                <i [ngClass]=" event.liked ? 'liked' : '' " class="bi bi-star"></i> Interested
+                <i (click)="attendEvent()" [ngClass]=" event.liked ? 'liked' : '' " class="bi bi-star"></i> Interested
             </button>
             <button  style="max-width: max-content;" class="col-12">
                 <i class="bi bi-share"></i>
