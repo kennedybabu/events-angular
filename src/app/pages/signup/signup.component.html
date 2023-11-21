@@ -6,30 +6,30 @@
         <div class="right col-12 col-md-5 col-xs-6 text-center" style="padding: 40px;">
             <h3 style="font-weight: bold;">Sign Up to Genie</h3>
             <div>
-                <form>
+                <form [formGroup]="signupForm" (submit)="onFormSubmit()">
                     <div class="form-group mb-2 input-outline">
-                        <input type="text" placeholder="First Name" class="form-control">
+                        <input type="text" formControlName="first_name" placeholder="First Name" class="form-control">
                     </div>
                     <div class="form-group mb-2 input-outline">
-                        <input type="text" placeholder="Last Name" class="form-control">
+                        <input type="text" formControlName="last_name" placeholder="Last Name" class="form-control">
                     </div>
                     <div class="form-group mb-2 input-outline">
-                        <input type="text" placeholder="Username" class="form-control">
+                        <input type="text" formControlName="username" placeholder="Username" class="form-control">
                     </div>
                     <div class="form-group mb-2 input-outline">
-                        <input type="email" placeholder="Email Address" class="form-control">
+                        <input type="email" formControlName="email" placeholder="Email Address" class="form-control">
                     </div>
                     <div class="form-group mb-2 input-outline">
-                        <textarea placeholder="Bio" class="form-control" name="bio" id="bio" cols="30" rows="4"></textarea>
+                        <textarea placeholder="Bio" formControlName="bio" class="form-control" name="bio" id="bio" cols="30" rows="4"></textarea>
                     </div>
                     <div class="form-group mb-2 input-outline">
-                        <input type="password" placeholder="Pasword" class="form-control">
+                        <input type="password" formControlName="password" placeholder="Pasword" class="form-control">
                     </div>
                     <div>
                         <small>By clicking Sign Up, you agreee to our Terms, Data Policy and Cookie Policy. You may receive Email notifications from us and can opt out at any time.</small>
                     </div>
                     <div class="my-2">
-                        <button style="background-color: #ff7555;border-radius: 5px;padding: 10px;border: none;color: #fff;width: 100%;">Sign Up</button>
+                        <button type="submit" style="background-color: #ff7555;border-radius: 5px;padding: 10px;border: none;color: #fff;width: 100%;">Sign Up</button>
                     </div>
                     <small>If you have an account? <span style="cursor: pointer;color: #ff7555;" routerLink="/login">Login Now</span></small>
                 </form>
