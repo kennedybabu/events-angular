@@ -10,7 +10,7 @@ import { environment } from 'src/environment/environment';
 })
 export class EventComponent implements OnInit {
   eventId!: any
-  event!: any
+  event!: any 
 
   constructor(private route:ActivatedRoute, private http:HttpClient, private router:Router){
     this.route.params.subscribe(

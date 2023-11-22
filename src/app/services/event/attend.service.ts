@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { environment } from 'src/environment/environment';
 
 @Injectable({
@@ -9,9 +10,7 @@ export class AttendService {
 
   constructor(private http:HttpClient) { }
 
-  attendEvent(eventId: string){
-    this.http.post(`${environment.apiBaseUrl}/event/${eventId}/attend`, {}).subscribe((res) => {
-      console.log(res)
-    })
+  attendEvent(eventId: string): Observable<any>{
+    return this.http.post(`${environment.apiBaseUrl}/event/${eventId}/attend/`, {})
   }
 }

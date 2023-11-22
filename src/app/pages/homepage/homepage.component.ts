@@ -62,4 +62,8 @@ export class HomepageComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  onEventUpdate(){
+    this.fetchEvents()
+  }
 }

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { AttendService } from 'src/app/services/event/attend.service';
 
@@ -10,6 +10,7 @@ import { AttendService } from 'src/app/services/event/attend.service';
 export class EventComponent {
 
   @Input() event!: any 
+  @Output() eventUpdated = new EventEmitter<boolean>()
 
   constructor(private router:Router, private attendService:AttendService){}
 
@@ -19,7 +20,10 @@ export class EventComponent {
 
 
   attendEvent(){
-    this.attendService.attendEvent(this.event.id)
+    this.attendService.attendEvent(this.event.id).subscribe((res) => {
+      console.log(res)
+      this.eventUpdated.emit(true)
+    })
   }
 
 }
