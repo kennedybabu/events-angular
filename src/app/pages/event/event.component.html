@@ -23,7 +23,7 @@
 
                                     </div>
                                     <div class="mx-2" style="display: flex;align-items: center;">
-                                        Hosted by <span style="font-weight: 500;" class="mx-1">{{event?.author?.username}}</span>
+                                        Hosted by <span style="font-weight: bolder;" class="mx-1">{{event?.author?.username}}</span>
                                     </div>
                                 </div>
                                 <div class="d-flex">
@@ -44,7 +44,7 @@
                         </div>
                         <div style="padding: 20px;">
                             <p><i class="bi bi-people mr-2"></i> {{ event?.likes_count + event?.attending_count }} People responded</p>
-                            <p><i class="bi bi-flag mr-2"></i> Event by Rock Smith</p>
+                            <p><i class="bi bi-flag mr-2"></i> Event by <span style="font-weight: bold;">{{event?.author?.first_name }} {{event?.author?.last_name }}</span></p>
                             <p><i class="bi bi-clock mr-2"></i> Sks, Here and There Lounge, Ngong Road</p>
                             <p> <i class="bi bi-clock mr-2"></i> {{ event?.date }}</p>
                             <p> <i class="bi bi-globe mr-2"></i> Tickets</p>

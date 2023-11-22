@@ -78,12 +78,7 @@
                             </div>
                         </div>
                         <div style="padding: 20px;" class="d-flex gap-3 flex-wrap">                      
-                            <app-event-draft></app-event-draft>    
-                            <app-event-draft></app-event-draft>                       
-                            <app-event-draft></app-event-draft>                       
-                            <app-event-draft></app-event-draft>                       
-                            <app-event-draft></app-event-draft>                       
-                            <app-event-draft></app-event-draft>                       
+                            <app-event-draft *ngFor="let event of events" ></app-event-draft>                                            
                         </div>
                     </div>
                 </div>

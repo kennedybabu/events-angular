@@ -10,6 +10,7 @@ import { environment } from 'src/environment/environment';
 export class UserProfileComponent implements OnInit {
   userObject!: any
   user!: any 
+  events!: any
 
 
   constructor(private http:HttpClient){
@@ -25,6 +26,11 @@ export class UserProfileComponent implements OnInit {
   ngOnInit(): void {
     this.http.get(`${environment.apiBaseUrl}/user/${this.user.id}`).subscribe((res) => {
       this.userObject = res
+    })
+
+
+    this.http.get(`${environment.apiBaseUrl}/event/?author__public_id=${this.user.id}`).subscribe((res: any) => {
+      this.events = res.filter((event: any) => event.author.id === this.user.id)
     })
   }
 
