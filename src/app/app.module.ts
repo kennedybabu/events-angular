@@ -26,6 +26,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { AuthInterceptor } from './_services/auth.interceptor';
 import { MonthDayPipe } from './month-day.pipe';
+import { EditEventComponent } from './components/edit-event/edit-event.component';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import { MonthDayPipe } from './month-day.pipe';
     EventDraftComponent,
     LoginComponent,
     SignupComponent,
-    MonthDayPipe
+    MonthDayPipe,
+    EditEventComponent
   ],
   imports: [
     BrowserModule,

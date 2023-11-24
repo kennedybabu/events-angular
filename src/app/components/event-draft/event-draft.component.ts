@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-event-draft',
@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./event-draft.component.scss']
 })
 export class EventDraftComponent {
+
+  @Input() event!: any
 
 }

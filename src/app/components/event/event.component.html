@@ -2,7 +2,16 @@
     <div style="position: relative;" class="top">
 
         <div style="position: absolute;right: 1rem;top: 1rem;background-color: rgba(209, 209, 209, 0.1);border-radius: 5px;height: 30px;width: 30px;cursor: pointer;display: flex;align-items: center;justify-content: center;" class="more-wrapper">
-            <i style="color: #f1f1f1;font-size: large;" class="bi bi-three-dots-vertical"></i>
+            <i style="color: #f1f1f1;font-size: large;" class="bi bi-three-dots-vertical" type="button" data-bs-toggle="dropdown" aria-expanded="false"></i>
+            <div class="dropdown">
+                <!-- <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown button
+                </button> -->
+                <ul class="dropdown-menu">
+                  <li (click)="openDialog()"><a class="dropdown-item"><i class="bi bi-pencil-square"></i> Edit</a></li>
+                  <li><a class="dropdown-item" href="#"><i class="bi bi-trash3"></i> Delete</a></li>
+                </ul>
+            </div>
         </div>
     </div>
     <div class="bottom">
@@ -14,7 +23,7 @@
             <button (click)="attendEvent()" class="col-7">
                 <i  [ngClass]=" event.liked ? 'liked' : '' " class="bi bi-star"></i> Interested
             </button>
-            <button  style="max-width: max-content;" class="col-12">
+            <button (click)="openDialog()"  style="max-width: max-content;" class="col-12">
                 <i class="bi bi-share"></i>
             </button>
         </div>

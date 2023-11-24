@@ -28,12 +28,10 @@ export class UserProfileComponent implements OnInit {
       this.userObject = res
     })
 
-
     this.http.get(`${environment.apiBaseUrl}/event/?author__public_id=${this.user.id}`).subscribe((res: any) => {
       this.events = res.filter((event: any) => event.author.id === this.user.id)
     })
+
   }
-
-
 
 }
