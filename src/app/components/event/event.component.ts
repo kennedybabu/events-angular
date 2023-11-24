@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { AttendService } from 'src/app/services/event/attend.service';
 import { EditEventComponent } from '../edit-event/edit-event.component';
+import { DeleteEventService } from 'src/app/services/event/delete-event.service';
 
 @Component({
   selector: 'app-event',
@@ -14,7 +15,11 @@ export class EventComponent {
   @Input() event!: any 
   @Output() eventUpdated = new EventEmitter<boolean>()
 
-  constructor(private router:Router, private attendService:AttendService,private dialog:MatDialog){}
+  constructor(
+    private router:Router, 
+    private attendService:AttendService,
+    private dialog:MatDialog,
+    private deleteEventService: DeleteEventService){}
 
   viewEventDetails(){
     this.router.navigate([`/event/${this.event?.id}`])
@@ -35,6 +40,13 @@ export class EventComponent {
            }
     });
   
+  }
+
+  deleteEvent(){
+    this.deleteEventService.deleteEvent(this.event.id).subscribe((res) => {
+      console.log(res)
+      this.eventUpdated.emit(true)
+    })
   }
 
 }
