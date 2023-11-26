@@ -1,5 +1,5 @@
 <div class="create-event">
-    <h3 style="font-weight: bold;color: #ff7555;">Add An Event</h3>
+    <h3 style="font-weight: bold;color: #ff7555;">Update Event</h3>
     <form #editForm="ngForm" (ngSubmit)="onFormSubmit(editForm)">
         <div class="img mb-2">
             <div class="file">
@@ -28,6 +28,6 @@
             <input type="text" placeholder="Enter Age Limit"  class="form-control" name="age" id="age" [(ngModel)]="event.age_limit">
         </div>
 
-        <button class="w-100" style="background-color: #ff7555;border: none;outline: none;border-radius: 5px;height: 40px;color: #ffff;">Create Event</button>
+        <button class="w-100" style="background-color: #ff7555;border: none;outline: none;border-radius: 5px;height: 40px;color: #ffff;">Update Event</button>
     </form>
 </div>

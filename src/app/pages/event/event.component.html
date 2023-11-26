@@ -46,9 +46,9 @@
                             <p><i class="bi bi-people mr-2"></i> {{ event?.likes_count + event?.attending_count }} People responded</p>
                             <p><i class="bi bi-flag mr-2"></i> Event by <span style="font-weight: bold;">{{event?.author?.first_name }} {{event?.author?.last_name }}</span></p>
                             <p><i class="bi bi-clock mr-2"></i> Sks, Here and There Lounge, Ngong Road</p>
-                            <p> <i class="bi bi-clock mr-2"></i> {{ event?.date }}</p>
-                            <p> <i class="bi bi-globe mr-2"></i> Tickets</p>
-                            <p> <i class="bi bi-globe mr-2"></i> Private</p>
+                            <p><i class="bi bi-clock mr-2"></i> {{ event?.date }}</p>
+                            <p><i class="bi bi-globe mr-2"></i> Tickets Price: <span style="font-weight: bold;">{{event?.ticket_price ? event?.ticket_price : 'Free'}}</span></p>
+                            <p><i class="bi bi-globe mr-2"></i> Private</p>
                             <small style="color: #313131;">Get Ready to get yourself dirty with paint!</small>
                         </div>
                     </div>

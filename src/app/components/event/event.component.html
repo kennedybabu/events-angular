@@ -1,15 +1,14 @@
 <div class="event shadow-sm rounded mb-3">
     <div style="position: relative;" class="top">
-
-        <div style="position: absolute;right: 1rem;top: 1rem;background-color: rgba(209, 209, 209, 0.1);border-radius: 5px;height: 30px;width: 30px;cursor: pointer;display: flex;align-items: center;justify-content: center;" class="more-wrapper">
-            <i style="color: #f1f1f1;font-size: large;" class="bi bi-three-dots-vertical" type="button" data-bs-toggle="dropdown" aria-expanded="false"></i>
+        <div *ngIf="event.due" class="due" style="position: absolute;left: .2rem;top: .2rem;padding: .5rem;color: #f1f1f1;background-color: #ff7555;width: max-content;border-radius: 3px;">
+            Due
+        </div>
+        <div type="button" *ngIf="userId === event.author.id" data-bs-toggle="dropdown" aria-expanded="false" style="position: absolute;right: 1rem;top: 1rem;background-color: rgba(209, 209, 209, 0.1);border-radius: 5px;height: 30px;width: 30px;cursor: pointer;display: flex;align-items: center;justify-content: center;" class="more-wrapper">
+            <i style="color: #f1f1f1;font-size: large;" class="bi bi-three-dots-vertical" ></i>
             <div class="dropdown">
-                <!-- <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dropdown button
-                </button> -->
-                <ul class="dropdown-menu">
-                  <li (click)="openDialog()"><a class="dropdown-item"><i class="bi bi-pencil-square"></i> Edit</a></li>
-                  <li (click)="deleteEvent()"><a class="dropdown-item"><i class="bi bi-trash3"></i> Delete</a></li>
+                  <ul class="dropdown-menu">
+                  <li (click)="openDialog()"><a class="dropdown-item"><i class="bi bi-pencil-square" style="color: #ff7555;"></i> Edit</a></li>
+                  <li (click)="deleteEvent()"><a class="dropdown-item"><i class="bi bi-trash3" style="color: rgb(250, 37, 37);"></i> Delete</a></li>
                 </ul>
             </div>
         </div>

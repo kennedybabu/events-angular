@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { AuthService } from 'src/app/auth/auth.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Route, Router } from '@angular/router';
+import { NotificationService } from 'src/app/services/shared/notification.service';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,10 @@ export class LoginComponent implements OnInit {
   // loginForm!: FormGroup  
   requestData$!: Observable<any>
 
-  constructor(private authService: AuthService, private router: Router){}
+  constructor(
+    private authService: AuthService, 
+    private router: Router,
+    private notificationService:NotificationService){}
 
   loginForm = new FormGroup({
     email: new FormControl('', Validators.email),
@@ -30,6 +34,7 @@ export class LoginComponent implements OnInit {
       console.log(res)
       if(res?.access && res?.refresh) {
         this.router.navigate(['/'])
+        this.notificationService.sendSuccessNofification('login successful', 'success')
       }
     }, (err) => {
       console.log(err)

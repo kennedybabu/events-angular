@@ -14,12 +14,19 @@ export class EventComponent {
 
   @Input() event!: any 
   @Output() eventUpdated = new EventEmitter<boolean>()
+  userId!: any
 
   constructor(
     private router:Router, 
     private attendService:AttendService,
     private dialog:MatDialog,
-    private deleteEventService: DeleteEventService){}
+    private deleteEventService: DeleteEventService){
+      let user = localStorage.getItem('user')
+
+      if(user){
+        this.userId = JSON.parse(user).id
+      }
+    }
 
   viewEventDetails(){
     this.router.navigate([`/event/${this.event?.id}`])
@@ -28,7 +35,6 @@ export class EventComponent {
 
   attendEvent(){
     this.attendService.attendEvent(this.event.id).subscribe((res) => {
-      console.log(res)
       this.eventUpdated.emit(true)
     })
   }
@@ -44,7 +50,6 @@ export class EventComponent {
 
   deleteEvent(){
     this.deleteEventService.deleteEvent(this.event.id).subscribe((res) => {
-      console.log(res)
       this.eventUpdated.emit(true)
     })
   }
