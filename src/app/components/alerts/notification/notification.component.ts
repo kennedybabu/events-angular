@@ -16,7 +16,6 @@ export class NotificationComponent implements OnInit {
 
 
   ngOnInit(): void {
-    console.log(this.notification)
-    this.type = this.notification?.type
+    this.type = this.notification?.type 
   }
 }

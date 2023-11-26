@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { AttendService } from 'src/app/services/event/attend.service';
 import { EditEventComponent } from '../edit-event/edit-event.component';
 import { DeleteEventService } from 'src/app/services/event/delete-event.service';
+import { NotificationService } from 'src/app/services/shared/notification.service';
 
 @Component({
   selector: 'app-event',
@@ -20,7 +21,8 @@ export class EventComponent {
     private router:Router, 
     private attendService:AttendService,
     private dialog:MatDialog,
-    private deleteEventService: DeleteEventService){
+    private deleteEventService: DeleteEventService,
+    private notificationService: NotificationService){
       let user = localStorage.getItem('user')
 
       if(user){
@@ -50,6 +52,7 @@ export class EventComponent {
 
   deleteEvent(){
     this.deleteEventService.deleteEvent(this.event.id).subscribe((res) => {
+      this.notificationService.sendSuccessNofification('Event deleted', 'success')
       this.eventUpdated.emit(true)
     })
   }

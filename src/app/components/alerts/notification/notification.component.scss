@@ -1,3 +1,8 @@
+#alert {
+    animation: fadeIn .5s;
+}
+
+
 .success {
     background-color: rgb(191, 255, 42);
 }
@@ -5,4 +10,22 @@
 
 .error {
     background-color: rgb(255, 74, 42);  
+}
+
+
+@keyframes fadeIn {
+    0% {
+        right: -200px;
+        opacity: 0;
+    }
+
+    75% {
+        right: 2.5rem;
+    }
+
+    100% {
+        right: 2rem;
+        opacity: 1;
+    }
+    
 }
