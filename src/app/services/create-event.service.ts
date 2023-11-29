@@ -17,14 +17,24 @@ export class CreateEventService {
     }
   }
 
-  createEvent(formValue: any): Observable<any> { 
-    let object = {
-      "body": formValue.body,
-      "date": formValue.date,
-      "ticket_price": formValue.ticket_price,
-      "age_limit": formValue.age_limit,
-      "author": this.userId
-    }
-    return this.http.post(`${environment.apiBaseUrl}/event/`, object)
+  createEvent(formValue: any, image: any): Observable<any> { 
+    // let object = {
+    //   "body": formValue.body,
+    //   "date": formValue.date,
+    //   "ticket_price": formValue.ticket_price,
+    //   "age_limit": formValue.age_limit,
+    //   "author": this.userId
+    // }
+
+    const formData = new FormData()
+
+    formData.append('body', formValue.body)
+    formData.append('date', formValue.date)
+    formData.append('ticket_price', formValue.ticket_price)
+    formData.append('age_limit', formValue.age_limit)
+    formData.append('author', this.userId) 
+    formData.append('banner', image )
+
+    return this.http.post(`${environment.apiBaseUrl}/event/`, formData)
   }
 }

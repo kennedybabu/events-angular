@@ -11,7 +11,6 @@ import { NotificationService } from 'src/app/services/shared/notification.servic
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  // loginForm!: FormGroup  
   requestData$!: Observable<any>
 
   constructor(
@@ -31,14 +30,13 @@ export class LoginComponent implements OnInit {
   onFormSubmit(): void {
     const formData: any = this.loginForm.value 
     this.authService.login(formData?.email, formData?.password).subscribe((res) => {
-      console.log(res)
       if(res?.access && res?.refresh) {
         this.router.navigate(['/'])
         this.notificationService.sendSuccessNofification('login successful', 'success')
       }
-    }, (err) => {
-      console.log(err)
-    })
+      }, (err) => {
+        this.notificationService.sendErrorNofification(err.statusText,'error')
+      })
   }
  
 }

@@ -16,6 +16,8 @@ export class CreateEventComponent {
     public dialogRef: MatDialogRef<CreateEventComponent>,
     private notificatonService: NotificationService){}
 
+  eventImage!: any
+
   eventForm = new FormGroup({
     body: new FormControl('', Validators.required),
     date: new FormControl('', Validators.required),
@@ -23,9 +25,14 @@ export class CreateEventComponent {
     age_limit: new FormControl('',Validators.required)
   })
 
+  onImageSelect(event: any) {
+    this.eventImage = event.target.files[0]
+  }
+
 
   onFormSubmit(){
-    this.createEventService.createEvent(this.eventForm.value).subscribe(
+    // console.log(this.eventForm.value, this.eventImage)
+    this.createEventService.createEvent(this.eventForm.value, this.eventImage).subscribe(
       (res)=> {
         if(res?.id){
           this.notificatonService.sendSuccessNofification('Event created', 'success')

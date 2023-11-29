@@ -1,5 +1,8 @@
 <div class="create-event">
-    <h3 style="font-weight: bold;color: #ff7555;">Update Event</h3>
+    <div style="width: 100%;display: flex;justify-content: space-between;align-items: center;">
+        <h3 style="font-weight: bold;color: #ff7555;">Update Event</h3>
+        <p style="cursor: pointer;" (click)="closeDialog()">x</p>
+    </div>
     <form #editForm="ngForm" (ngSubmit)="onFormSubmit(editForm)">
         <div class="img mb-2">
             <div class="file">

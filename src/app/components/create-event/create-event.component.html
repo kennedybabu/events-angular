@@ -3,8 +3,8 @@
     <form (submit)="onFormSubmit()" [formGroup]="eventForm">
         <div class="img mb-2">
             <div class="file">
-                <input type="file" name="file" style="display: none;">
-                <p class="mb-0"><i class="bi bi-image"></i><span class="mx-5">Upload Cover Image</span></p>
+                <input (change)="onImageSelect($event)" type="file" name="file"><br>
+                <!-- <p class="mb-0"><i class="bi bi-image"></i><span class="mx-5">Upload Cover Image</span></p> -->
             </div>
             <small>We recommend using a photo that is 1200X628 pixels.</small>
         </div>

@@ -1,0 +1,49 @@
+<div class="edit-profile">
+    <div style="width: 100%;display: flex;justify-content: space-between;align-items: center;">
+        <h3 style="font-weight: bold;color: #ff7555;">Update Event</h3>
+        <p style="cursor: pointer;" (click)="closeDialog()">x</p>
+    </div>
+    <form #editForm="ngForm" (ngSubmit)="onFormSubmit(editForm)">
+        <div class="img mb-2">
+            <div class="file">
+                <input type="file" name="file" style="display: none;">
+                <p class="mb-0"><i class="bi bi-image"></i><span class="mx-5">Upload Profile Picture</span></p>
+            </div>
+            <small>We recommend using a photo that is 1200X628 pixels.</small>
+        </div>
+        <div class="img mb-2">
+            <div class="file">
+                <input type="file" name="file" style="display: none;">
+                <p class="mb-0"><i class="bi bi-image"></i><span class="mx-5">Upload Profile Background Image</span></p>
+            </div>
+            <small>We recommend using a photo that is 1200X628 pixels.</small>
+        </div>
+        <div class="form-group mb-2">
+            <label for="username">Username*</label>
+            <input type="text"  placeholder="Enter Username" class="form-control" [(ngModel)]="userObject.username" id="username" name="username">
+        </div>      
+
+        <div class="form-group mb-2">
+            <label for="first_name">First Name*</label>
+            <input type="text"  placeholder="Enter First Name" class="form-control" [(ngModel)]="userObject.first_name" id="first_name" name="first_name">
+        </div> 
+
+        <div class="form-group mb-2">
+            <label for="last_name">Last Name*</label>
+            <input type="text"  placeholder="Enter Last Name" class="form-control" [(ngModel)]="userObject.last_name" id="last_name" name="last_name">
+        </div> 
+
+        <div class="form-group mb-2">
+            <label for="email">Email*</label>
+            <input type="email"  placeholder="Enter Email" class="form-control" [(ngModel)]="userObject.email" id="email" name="email">
+        </div> 
+
+        <div class="form-group mb-2">
+            <label for="bio">Bio*</label>
+            <input type="text"  placeholder="Enter Bio" class="form-control" [(ngModel)]="userObject.bio" id="bio" name="bio">
+        </div> 
+
+        <button class="w-100" style="background-color: #ff7555;border: none;outline: none;border-radius: 5px;height: 40px;color: #ffff;">Update Event</button>
+    </form>
+</div>
+

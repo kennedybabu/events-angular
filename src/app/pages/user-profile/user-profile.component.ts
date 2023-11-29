@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { EditProfileComponent } from 'src/app/components/edit-profile/edit-profile.component';
 import { environment } from 'src/environment/environment';
 
 @Component({
@@ -13,7 +15,9 @@ export class UserProfileComponent implements OnInit {
   events!: any
 
 
-  constructor(private http:HttpClient){
+  constructor(
+    private http:HttpClient,
+    private dialog: MatDialog){
     let user = localStorage.getItem('user')
     if(user){
       let userObjeString = JSON.parse(user) 
@@ -32,6 +36,14 @@ export class UserProfileComponent implements OnInit {
       this.events = res.filter((event: any) => event.author.id === this.user.id)
     })
 
+  }
+
+  openDialog() {
+    const dialogRef = this.dialog.open(EditProfileComponent, {
+        data: {
+          user: this.userObject
+        }
+    });  
   }
 
 }

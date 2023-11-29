@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { AttendService } from 'src/app/services/event/attend.service';
@@ -11,11 +11,13 @@ import { NotificationService } from 'src/app/services/shared/notification.servic
   templateUrl: './event.component.html',
   styleUrls: ['./event.component.scss']
 })
-export class EventComponent {
+export class EventComponent implements OnInit {
 
   @Input() event!: any 
   @Output() eventUpdated = new EventEmitter<boolean>()
   userId!: any
+  DJANGO_SERVER = 'http://127.0.0.1:8000'
+  url!:any
 
   constructor(
     private router:Router, 
@@ -28,12 +30,20 @@ export class EventComponent {
       if(user){
         this.userId = JSON.parse(user).id
       }
+    
     }
 
   viewEventDetails(){
     this.router.navigate([`/event/${this.event?.id}`])
   }  
 
+  ngOnInit(): void {
+    if(this.event.banner == null) {
+      this.url = this.event.banner
+    } else {
+      this.url = `${this.DJANGO_SERVER}${this.event.banner}`
+    }
+  }
 
   attendEvent(){
     this.attendService.attendEvent(this.event.id).subscribe((res) => {
@@ -46,8 +56,7 @@ export class EventComponent {
            data: {
             event: this.event
            }
-    });
-  
+    });  
   }
 
   deleteEvent(){

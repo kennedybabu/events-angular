@@ -30,6 +30,11 @@ export class EditEventComponent {
   })
 
 
+  closeDialog(){
+    this.dialogRef.close()
+  }
+
+
   onFormSubmit(form: any){
     this.updateEventService.updateEvent(form.value, this.event.id).subscribe((res) => {
       if(res.id){

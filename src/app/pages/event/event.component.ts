@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { EditEventComponent } from 'src/app/components/edit-event/edit-event.component';
 import { environment } from 'src/environment/environment';
 
 @Component({
@@ -12,7 +14,10 @@ export class EventComponent implements OnInit {
   eventId!: any
   event!: any 
 
-  constructor(private route:ActivatedRoute, private http:HttpClient, private router:Router){
+  constructor(
+    private route:ActivatedRoute, 
+    private http:HttpClient, 
+    private router:Router){
     this.route.params.subscribe(
       (params:Params) => {
         this.eventId = params['id']
