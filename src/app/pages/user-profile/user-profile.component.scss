@@ -34,6 +34,12 @@
             position: absolute;
 
 
+            .user-avatar {
+                background-size: cover;
+                background-position: center;
+            }
+
+
             .profile-social-links {
                 display: flex;
                 align-items: center;

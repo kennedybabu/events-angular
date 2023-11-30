@@ -11,7 +11,7 @@
             <div class="row">
                 <div class="col-md-12 col-lg-5 col-xl-4">
                     <div class="user-plank text-center shadow-sm rounded">
-                        <div style="width: 130px;height: 130px;border-radius: 100%;border: 1px solid #ff7555;margin: 0 auto;" class="user-avatar">
+                        <div style="width: 130px;height: 130px;border-radius: 100%;border: 1px solid #ff7555;margin: 0 auto;" class="user-avatar" [ngStyle]="{'background-image': 'url(' + userObject?.avatar + ')'}">
 
                         </div>
                         <h3 style="font-weight: bold;font-size: 18px;color: #313131;margin: 32px 0 8px;">{{userObject?.first_name}} {{userObject?.last_name}}</h3>

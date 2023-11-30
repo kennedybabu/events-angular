@@ -18,13 +18,6 @@ export class CreateEventService {
   }
 
   createEvent(formValue: any, image: any): Observable<any> { 
-    // let object = {
-    //   "body": formValue.body,
-    //   "date": formValue.date,
-    //   "ticket_price": formValue.ticket_price,
-    //   "age_limit": formValue.age_limit,
-    //   "author": this.userId
-    // }
 
     const formData = new FormData()
 

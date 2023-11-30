@@ -1,6 +1,7 @@
 import { Component, Inject, Input } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { UpdateProfileService } from 'src/app/services/profile/update-profile.service';
 
 @Component({
   selector: 'app-edit-profile',
@@ -10,10 +11,13 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 export class EditProfileComponent {
 
   userObject!: any
+  profileAvatar!: any 
+  profileBgImg!: any
 
   constructor(
     public dialogRef: MatDialogRef<EditProfileComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
+    private updateProfileService: UpdateProfileService
     ){
       this.userObject = data.user 
       console.log(this.userObject)
@@ -22,7 +26,7 @@ export class EditProfileComponent {
   
 
   closeDialog(){
-    // this.dialogRef.close()
+    this.dialogRef.close()
   }
 
 
@@ -35,8 +39,18 @@ export class EditProfileComponent {
   })
 
 
-  onFormSubmit(form: any){
+  onAvatarSelect(event: any){
+    this.profileAvatar = event.target.files[0]
+  }
 
+  onProfileBgSelect(event: any) {
+    this.profileBgImg = event.target.files[0]
+  }
+
+  onFormSubmit(form: any){
+    this.updateProfileService.updateEvent(form.value, this.profileAvatar, this.profileBgImg, this.userObject.id).subscribe((res) => {
+      console.log(res)
+    })
   }
 
 

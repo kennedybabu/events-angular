@@ -1,19 +1,19 @@
 <div class="edit-profile">
     <div style="width: 100%;display: flex;justify-content: space-between;align-items: center;">
-        <h3 style="font-weight: bold;color: #ff7555;">Update Event</h3>
+        <h3 style="font-weight: bold;color: #ff7555;">Update Profile</h3>
         <p style="cursor: pointer;" (click)="closeDialog()">x</p>
     </div>
     <form #editForm="ngForm" (ngSubmit)="onFormSubmit(editForm)">
         <div class="img mb-2">
             <div class="file">
-                <input type="file" name="file" style="display: none;">
+                <input (change)="onAvatarSelect($event)" type="file" name="file">
                 <p class="mb-0"><i class="bi bi-image"></i><span class="mx-5">Upload Profile Picture</span></p>
             </div>
             <small>We recommend using a photo that is 1200X628 pixels.</small>
         </div>
         <div class="img mb-2">
             <div class="file">
-                <input type="file" name="file" style="display: none;">
+                <input (change)="onProfileBgSelect($event)" type="file" name="file">
                 <p class="mb-0"><i class="bi bi-image"></i><span class="mx-5">Upload Profile Background Image</span></p>
             </div>
             <small>We recommend using a photo that is 1200X628 pixels.</small>
