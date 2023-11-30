@@ -1,8 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { EditEventComponent } from 'src/app/components/edit-event/edit-event.component';
 import { environment } from 'src/environment/environment';
 
 @Component({
@@ -30,7 +28,6 @@ export class EventComponent implements OnInit {
     this.http.get(`${environment.apiBaseUrl}/event/${this.eventId}`).subscribe(
       (res) => {
         this.event = res
-        console.log(this.event)
       }
     )
   }

@@ -1,7 +1,8 @@
-import { Component, Inject, Input } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { UpdateProfileService } from 'src/app/services/profile/update-profile.service';
+import { NotificationService } from 'src/app/services/shared/notification.service';
 
 @Component({
   selector: 'app-edit-profile',
@@ -17,7 +18,8 @@ export class EditProfileComponent {
   constructor(
     public dialogRef: MatDialogRef<EditProfileComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
-    private updateProfileService: UpdateProfileService
+    private updateProfileService: UpdateProfileService,
+    private notificationService: NotificationService
     ){
       this.userObject = data.user 
       console.log(this.userObject)
@@ -49,7 +51,11 @@ export class EditProfileComponent {
 
   onFormSubmit(form: any){
     this.updateProfileService.updateEvent(form.value, this.profileAvatar, this.profileBgImg, this.userObject.id).subscribe((res) => {
-      console.log(res)
+      if(res.id) {
+        this.notificationService.sendSuccessNofification('Profile Edited', 'success')
+      } else {
+        this.notificationService.sendSuccessNofification('Request unsuccessful', 'error')
+      }
     })
   }
 

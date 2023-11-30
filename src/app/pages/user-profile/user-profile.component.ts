@@ -29,7 +29,8 @@ export class UserProfileComponent implements OnInit {
 
   ngOnInit(): void {
     this.http.get(`${environment.apiBaseUrl}/user/${this.user.id}`).subscribe((res) => {
-      this.userObject = res
+      this.userObject = res 
+      console.log(this.userObject)
     })
 
     this.http.get(`${environment.apiBaseUrl}/event/?author__public_id=${this.user.id}`).subscribe((res: any) => {
