@@ -8,7 +8,7 @@
                             <div class="event-img" [style]="{'background-image': 'url(' + event?.banner + ')'}">
                                 <div class="date">
                                     <span style="font-size: 16px;font-weight: 400;line-height: 14px;color: #313131;">Jun</span>
-                                    <span style="font-size: 28px;font-weight: 600;color: #313131;">30</span>
+                                    <span style="font-size: 28px;font-weight: 600;color: #313131;">{{ eventDate }}</span>
                                 </div>
                             </div>
                             <div class="event-details" style="padding: 20px;">
@@ -45,7 +45,7 @@
                             <p><i class="bi bi-people mr-2"></i> {{ event?.likes_count + event?.attending_count }} People responded</p>
                             <p><i class="bi bi-flag mr-2"></i> Event by <span style="font-weight: bold;">{{event?.author?.first_name }} {{event?.author?.last_name }}</span></p>
                             <p><i class="bi bi-clock mr-2"></i> Sks, Here and There Lounge, Ngong Road</p>
-                            <p><i class="bi bi-clock mr-2"></i> {{ event?.date }}</p>
+                            <p><i class="bi bi-clock mr-2"></i> {{ event?.date  }}</p>
                             <p><i class="bi bi-globe mr-2"></i> Tickets Price: <span style="font-weight: bold;">{{event?.ticket_price ? event?.ticket_price : 'Free'}}</span></p>
                             <p><i class="bi bi-globe mr-2"></i> Private</p>
                             <small style="color: #313131;">Get Ready to get yourself dirty with paint!</small>
@@ -80,19 +80,51 @@
                     </div>
 
                     <div style="background-color: #fff;border-radius: 5px;padding: 20px;" class="shadow-sm">
-                        <div class="d-flex items-center">
-                            <div class="col-10">
-                                <input style="padding: 8px 20px;margin: 0 5px;border-radius: 5px;border: 1px solid #a7a8aa;width: 98%;" type="text" placeholder="Comment">
-                            </div>
-                            <div class="col-2">
-                                <button style="background-color: #ff7555;border-radius: 5px;border: none;height: 40px;width: 100%;color: #fff;">
-                                    comment
-                                </button>
+                        <div>
+                            <form formGroup="commentForm" (submit)="onCommentCreate()" class="d-flex items-center justify-between my-1">
+                                <div class="col-10">
+                                    <input formControlName="body" style="padding: 8px 20px;margin: 0 5px;border-radius: 5px;border: 1px solid #a7a8aa;width: 98%;" type="text" placeholder="Comment">
+                                </div>
+                                <div class="col-2">
+                                    <button style="background-color: #ff7555;border-radius: 5px;border: none;height: 38px;width: 100%;color: #fff;">
+                                        comment
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div>
+                            <div class="py-1">
+                                <div style="padding: 10px 0;border-top: 1px solid #a7a8aa;">
+                                    <div style="display: flex;align-items: flex-start;">
+                                        <div>
+                                            <div style="width: 40px;height: 40px;background-color: tomato;border-radius: 100%;"> 
+    
+                                            </div>
+                                        </div>
+                                        <div style="margin-left: .5rem;">
+                                            <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, enim?</p>
+                                            <div style="padding: 3px 0;">
+                                                <small>like | dislike</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div style="padding: 10px 0;display: flex;align-items: center;border-top: 1px solid #a7a8aa;">
+                                    <div>
+                                        <div style="width: 40px;height: 40px;background-color: tomato;border-radius: 100%;"> 
+
+                                        </div>
+                                    </div>
+                                    <div style="margin-left: .5rem;">
+                                        <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, enim?</p>
+                                    </div>
+                                </div>
                             </div>
 
-                            <div>
-                                
-                            </div>
+                        
+                            
                         </div>
                     </div>
 

@@ -29,8 +29,7 @@ import { MonthDayPipe } from './month-day.pipe';
 import { EditEventComponent } from './components/edit-event/edit-event.component';
 import { NotificationComponent } from './components/alerts/notification/notification.component';
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
-import { CommentComponent } from './components/comment/comment/comment.component';
-import { CommentsComponent } from './components/comment/comments/comments.component';
+
 
 
 @NgModule({
@@ -55,8 +54,7 @@ import { CommentsComponent } from './components/comment/comments/comments.compon
     EditEventComponent,
     NotificationComponent,
     EditProfileComponent,
-    CommentComponent,
-    CommentsComponent
+
   ],
   imports: [
     BrowserModule,
