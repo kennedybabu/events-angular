@@ -22,7 +22,6 @@ export class EditProfileComponent {
     private notificationService: NotificationService
     ){
       this.userObject = data.user 
-      console.log(this.userObject)
     }
 
   
@@ -53,6 +52,7 @@ export class EditProfileComponent {
     this.updateProfileService.updateEvent(form.value, this.profileAvatar, this.profileBgImg, this.userObject.id).subscribe((res) => {
       if(res.id) {
         this.notificationService.sendSuccessNofification('Profile Edited', 'success')
+        this.dialogRef.close()
       } else {
         this.notificationService.sendSuccessNofification('Request unsuccessful', 'error')
       }
