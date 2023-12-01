@@ -23,6 +23,7 @@ export class CreateCommentService {
       "body": formvalue.body,
       "event": eventId
     }
+    console.log(formData)
 
     return this.http.post(`${environment.apiBaseUrl}/event/${eventId}/comment/`, formData)    
 

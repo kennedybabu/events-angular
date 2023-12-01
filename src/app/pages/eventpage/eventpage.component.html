@@ -81,7 +81,7 @@
 
                     <div style="background-color: #fff;border-radius: 5px;padding: 20px;" class="shadow-sm">
                         <div>
-                            <form formGroup="commentForm" (submit)="onCommentCreate()" class="d-flex items-center justify-between my-1">
+                            <form [formGroup]="commentForm" (submit)="onCommentCreate()" class="d-flex items-center justify-between my-1">
                                 <div class="col-10">
                                     <input formControlName="body" style="padding: 8px 20px;margin: 0 5px;border-radius: 5px;border: 1px solid #a7a8aa;width: 98%;" type="text" placeholder="Comment">
                                 </div>
@@ -121,9 +121,7 @@
                                         <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, enim?</p>
                                     </div>
                                 </div>
-                            </div>
-
-                        
+                            </div>                      
                             
                         </div>
                     </div>

@@ -5,13 +5,12 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 import { CreateCommentService } from 'src/app/services/comment/create-comment.service';
 import { GetCommentsService } from 'src/app/services/comment/get-comments.service';
 import { environment } from 'src/environment/environment';
-
 @Component({
-  selector: 'app-event',
-  templateUrl: './event.component.html',
-  styleUrls: ['./event.component.scss']
+  selector: 'app-eventpage',
+  templateUrl: './eventpage.component.html',
+  styleUrls: ['./eventpage.component.scss']
 })
-export class EventComponent implements OnInit {
+export class EventpageComponent implements OnInit {
   eventId!: any
   event!: any 
   eventDate!:any
@@ -73,7 +72,6 @@ export class EventComponent implements OnInit {
 
 
   onCommentCreate(){
-    console.log(this.commentForm.value)
     this.createCommentService.createComment(this.commentForm.value, this.eventId).subscribe((res) => {
       console.log(res)
     })

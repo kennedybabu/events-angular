@@ -13,6 +13,7 @@ import { EventComponent } from './components/event/event.component';
 import { WeatherComponent } from './components/weather/weather.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { EventpageComponent } from './pages/eventpage/eventpage.component'
 
 import {MatDialogModule} from '@angular/material/dialog';
 import { CreateEventComponent } from './components/create-event/create-event.component';
@@ -54,6 +55,8 @@ import { EditProfileComponent } from './components/edit-profile/edit-profile.com
     EditEventComponent,
     NotificationComponent,
     EditProfileComponent,
+    EventpageComponent
+  
 
   ],
   imports: [
@@ -61,8 +64,8 @@ import { EditProfileComponent } from './components/edit-profile/edit-profile.com
     AppRoutingModule,
     BrowserAnimationsModule,
     MatDialogModule,
-    ReactiveFormsModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     
   ],

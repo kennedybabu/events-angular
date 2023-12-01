@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AuthService } from 'src/app/auth/auth.service';
 import { CreateEventComponent } from 'src/app/components/create-event/create-event.component';
-import { jwtDecode } from "jwt-decode";
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environment/environment';
 
