@@ -95,37 +95,10 @@
 
                         <div>
                             <div class="py-1">
-                                <div style="padding: 10px 0;border-top: 1px solid #a7a8aa;">
-                                    <div style="display: flex;align-items: flex-start;">
-                                        <div>
-                                            <div style="width: 40px;height: 40px;background-color: tomato;border-radius: 100%;"> 
-    
-                                            </div>
-                                        </div>
-                                        <div style="margin-left: .5rem;">
-                                            <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, enim?</p>
-                                            <div style="padding: 3px 0;">
-                                                <small>like | dislike</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div style="padding: 10px 0;display: flex;align-items: center;border-top: 1px solid #a7a8aa;">
-                                    <div>
-                                        <div style="width: 40px;height: 40px;background-color: tomato;border-radius: 100%;"> 
-
-                                        </div>
-                                    </div>
-                                    <div style="margin-left: .5rem;">
-                                        <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, enim?</p>
-                                    </div>
-                                </div>
+                                <app-comment-obj [comment]="comment" *ngFor="let comment of comments"></app-comment-obj>
                             </div>                      
-                            
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>

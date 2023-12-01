@@ -19,7 +19,6 @@ export class AuthInterceptor implements HttpInterceptor {
       return next.handle(request)
     }
     const data = this.authService.userData 
-    // const access_token = localStorage.getItem('access_token') 
 
     if(data) {
       if(this.authService.isAuthTokenValid(data.access_token)) {

@@ -15,6 +15,7 @@ export class EventpageComponent implements OnInit {
   event!: any 
   eventDate!:any
   eventMonth!: any
+  comments!: any
 
  months = {
   0: 'Jan',
@@ -56,7 +57,9 @@ export class EventpageComponent implements OnInit {
 
 
     this.getCommentsService.getComments(this.eventId).subscribe((res) => {
-      console.log(res.results)
+      this.comments = res.results 
+
+      console.log(this.comments)
     })
   }
 

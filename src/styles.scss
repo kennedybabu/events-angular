@@ -38,3 +38,109 @@ body {
     }
 
  }
+
+
+
+ @media screen and (max-width: 1399px){
+    //navbar media query
+    .navbar {
+        input {
+            display: none;
+        }
+    }
+
+    //homepage query 
+
+    #homepage {
+        .left-container {
+            display: none;
+        }
+
+        .main-content-container {
+            min-width: 70%!important;
+        }
+
+        .right-container {
+            max-width: 30%!important;
+
+
+            .event {
+                width: 50%;
+            }
+
+            #events {
+                .col-6 {
+                    width: 44%!important;
+                    aspect-ratio: 1;
+                }
+            }
+        }
+    }
+ }
+
+
+ @media screen and (max-width: 1015px){
+    #homepage {
+        #wrapper {
+            flex-direction: column!important;           
+
+            .main-content-container {
+                width: 100%;
+
+
+                #main-search-bar {
+                    height: auto!important;
+
+                    input {
+                        margin: 5px 0!important;
+                    }
+
+                    button {
+                        width: 100%;
+                        margin: auto;
+                    }
+                }
+
+
+                .col-lg-5 {
+                    min-width: 35%;
+
+                    input {
+                        min-width: 100%;
+                    }
+                }
+
+
+                .col-lg-2 {
+                    min-width: 10%;
+                }
+
+                #event {
+                    min-width: 48%!important;
+                }
+            }
+
+
+            .right-container {
+                display: none;
+            }
+        }
+    }
+ }
+
+
+
+ @media screen and (max-width: 900px){
+    .navbar {
+        #links {
+            display: none;
+        }
+
+
+        #icons {
+            .bi-bell, .bi-chat-left, .bi-person-add {
+                display: none;
+            }
+        }
+    }
+ }

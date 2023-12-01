@@ -30,6 +30,7 @@ import { MonthDayPipe } from './month-day.pipe';
 import { EditEventComponent } from './components/edit-event/edit-event.component';
 import { NotificationComponent } from './components/alerts/notification/notification.component';
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
+import { CommentObjComponent } from './components/comment-obj/comment-obj.component';
 
 
 
@@ -55,7 +56,8 @@ import { EditProfileComponent } from './components/edit-profile/edit-profile.com
     EditEventComponent,
     NotificationComponent,
     EditProfileComponent,
-    EventpageComponent
+    EventpageComponent,
+    CommentObjComponent
   
 
   ],
