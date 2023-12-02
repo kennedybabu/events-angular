@@ -132,6 +132,9 @@ body {
 
  @media screen and (max-width: 900px){
     .navbar {
+        padding: 0 10px!important;
+
+
         #links {
             display: none;
         }
@@ -141,6 +144,25 @@ body {
             .bi-bell, .bi-chat-left, .bi-person-add {
                 display: none;
             }
+
+            gap: 15px;
+        }
+
+
+        #event {
+            min-width: 100%!important;
         }
     }
  }
+
+
+ @media (max-width: 576px) {
+     .container, .container-sm {
+         max-width: 690px;
+
+        }
+        #event {
+           width: 100%!important;
+           // max-width: ;
+        }
+    }

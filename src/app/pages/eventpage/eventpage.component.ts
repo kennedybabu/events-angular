@@ -54,13 +54,10 @@ export class EventpageComponent implements OnInit {
         this.eventDate = new Date(this.event.date).getDate()        
       }
     )
+    
+    this.getComments()
 
-
-    this.getCommentsService.getComments(this.eventId).subscribe((res) => {
-      this.comments = res.results 
-
-      console.log(this.comments)
-    })
+   
   }
 
 
@@ -76,7 +73,15 @@ export class EventpageComponent implements OnInit {
 
   onCommentCreate(){
     this.createCommentService.createComment(this.commentForm.value, this.eventId).subscribe((res) => {
-      console.log(res)
+      if(res.id) {
+        this.getComments()
+      }
+    })
+  }
+
+  getComments(){
+    this.getCommentsService.getComments(this.eventId).subscribe((res) => {
+      this.comments = res.results 
     })
   }
 
