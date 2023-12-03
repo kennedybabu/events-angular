@@ -1,6 +1,18 @@
-<div style="position: relative;">
+<!-- <div style="position: relative;">
     <app-navbar></app-navbar>
     <router-outlet></router-outlet>
     <app-footer></app-footer>
     <app-notification *ngIf="notification" [notification]="notification" ></app-notification>  
-</div>
+</div> -->
+
+<mat-drawer-container style="position: relative;">
+    <mat-drawer mode="over" position="start" [opened]="opened">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, culpa!
+    </mat-drawer>
+    <mat-dialog-content>
+        <app-navbar (toggleSidenav)="toggleSidenav($event)"></app-navbar>
+        <router-outlet></router-outlet>
+        <app-footer></app-footer>
+        <app-notification *ngIf="notification" [notification]="notification" ></app-notification>  
+    </mat-dialog-content>
+</mat-drawer-container>

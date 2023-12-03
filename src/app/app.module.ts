@@ -14,6 +14,8 @@ import { WeatherComponent } from './components/weather/weather.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { EventpageComponent } from './pages/eventpage/eventpage.component'
+import {MatSidenavModule} from '@angular/material/sidenav';
+
 
 import {MatDialogModule} from '@angular/material/dialog';
 import { CreateEventComponent } from './components/create-event/create-event.component';
@@ -69,6 +71,7 @@ import { CommentObjComponent } from './components/comment-obj/comment-obj.compon
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MatSidenavModule
     
   ],
   providers: [

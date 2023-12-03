@@ -49,8 +49,7 @@ body {
         }
     }
 
-    //homepage query 
-
+    //homepage query
     #homepage {
         .left-container {
             display: none;
@@ -159,10 +158,9 @@ body {
  @media (max-width: 576px) {
      .container, .container-sm {
          max-width: 690px;
-
         }
+
         #event {
            width: 100%!important;
-           // max-width: ;
         }
     }

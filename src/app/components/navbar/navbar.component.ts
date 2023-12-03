@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateEventComponent } from '../create-event/create-event.component';
 
@@ -10,13 +10,16 @@ import { CreateEventComponent } from '../create-event/create-event.component';
 export class NavbarComponent {
 
   constructor(private dialog: MatDialog){}
+  
+  @Output() toggleSidenav : EventEmitter<any> = new EventEmitter()
 
   openDialog() {
-    this.dialog.open(CreateEventComponent, {
-      data: {
-        animal: 'panda',
-      },
-    });
+    this.dialog.open(CreateEventComponent);
+  }
+
+
+  toggle(){
+    this.toggleSidenav.emit(null)
   }
 
 }

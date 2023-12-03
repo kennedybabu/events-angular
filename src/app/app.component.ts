@@ -10,6 +10,7 @@ export class AppComponent {
   title = 'events';
   notification!: string
   type!: string
+  opened: boolean = false
 
   constructor(private notificationService:NotificationService){
     this.notificationService.getSuccessNotification().subscribe((res) => {
@@ -34,5 +35,9 @@ export class AppComponent {
     }, 2000)
   }
 
+  toggleSidenav(event: any){
+    this.opened = !this.opened
+    console.log(this.opened)
+  }
   
 }

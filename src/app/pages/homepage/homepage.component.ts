@@ -19,9 +19,6 @@ export class HomepageComponent implements OnInit {
   events!: any
   
   constructor(private dialog: MatDialog, private authService: AuthService, private http:HttpClient){
-    // let user = authService.userData 
-    // this.user_data = jwtDecode(user.access_token)
-
 
     this.user = localStorage.getItem('user') 
 
@@ -34,7 +31,6 @@ export class HomepageComponent implements OnInit {
   
   fetchUserDetails(params:any){
     this.http.get(`${environment.apiBaseUrl}/user/${params}/`).subscribe((res) => {
-      console.log(res)
       this.user = res
     })  
     
@@ -44,7 +40,6 @@ export class HomepageComponent implements OnInit {
   fetchEvents(){
     this.http.get(`${environment.apiBaseUrl}/event/`).subscribe((res) => {
       this.events = res 
-      console.log(this.events)
     })
   }
 
