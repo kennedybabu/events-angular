@@ -55,9 +55,7 @@ export class EventpageComponent implements OnInit {
       }
     )
     
-    this.getComments()
-
-   
+    this.getComments()   
   }
 
 

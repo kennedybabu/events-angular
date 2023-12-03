@@ -40,4 +40,26 @@
             }
         }
     }
+
+    .comments {
+        max-height: 384px;
+        overflow-y: scroll;
+        position: relative;
+        margin-top: 1.5rem;
+        
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+}
+
+
+@media screen and (max-width: 995px) {
+    .event-wrapper {
+
+        .wrapper {
+            flex-direction: column!important;
+
+        }
+    }
 }

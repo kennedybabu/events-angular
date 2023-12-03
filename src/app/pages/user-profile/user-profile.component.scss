@@ -2,7 +2,6 @@
 
     .header-bg {
         height: 260px;
-        // background-image: url(../.././../assets/stars.jpg);
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
@@ -63,5 +62,31 @@
             }
         }
     }
+    
+}
+
+
+
+@media screen and (max-width: 1400px) {
+    .main-content {
+
+        .wrapper {
+            flex-direction: column;
+
+            .col-md-12 {
+                width: 100%;
+
+                .user-plank {
+                    width: 100%;
+                    position: initial;
+                }
+            }
+
+        }
+    }
+}
+
+
+@media screen and (max-width: 788px) {
     
 }
