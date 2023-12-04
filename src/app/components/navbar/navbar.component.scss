@@ -50,3 +50,10 @@
         display: none;
     }
 }
+
+
+@media screen and (max-width: 1348px) {
+    .navbar {
+        padding: 0 auto;
+    }
+}

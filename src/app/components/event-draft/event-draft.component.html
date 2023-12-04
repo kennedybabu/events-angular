@@ -4,10 +4,10 @@
  
     </div>
     <div class="bottom">
-        <h3 class='title' style="font-size: 16px;margin-bottom: 7px;color: #313131;">{{event?.body}}</h3>
+        <h3 (click)="viewEvent()" class='title accent-color' style="font-size: 16px;margin-bottom: 7px;color: #313131;">{{event?.body}}</h3>
         <div style="display: flex;justify-content: space-between; margin-bottom: 1rem;">
             <span>Budget Spent</span>
-            <span style="color: #afafaf;">$100</span>
+            <span style="color: #afafaf;">{{ event.ticket_price }}</span>
         </div>
         <div style="display: flex;justify-content: space-between; margin-bottom: 1rem;">
             <span><i class="bi bi-people mx-1"></i>Reach</span>

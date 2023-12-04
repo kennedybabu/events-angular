@@ -16,6 +16,9 @@ export class EventpageComponent implements OnInit {
   eventDate!:any
   eventMonth!: any
   comments!: any
+  url!: any
+  DJANGO_SERVER = 'http://127.0.0.1:8000'
+
 
  months = {
   0: 'Jan',
@@ -47,11 +50,22 @@ export class EventpageComponent implements OnInit {
 
 
   ngOnInit(): void {
+
+    
+    
     this.http.get(`${environment.apiBaseUrl}/event/${this.eventId}`).subscribe(
       (res) => {
         this.event = res
+        console.log(this.event)
         this.eventMonth = new Date(this.event.date).getMonth()
-        this.eventDate = new Date(this.event.date).getDate()        
+        this.eventDate = new Date(this.event.date).getDate()  
+        
+        
+        if(this.event == null) {
+          this.url = this.event?.author?.avatar
+        } else {
+          this.url = `${this.DJANGO_SERVER}${this.event?.author?.avatar}`
+        }
       }
     )
     
