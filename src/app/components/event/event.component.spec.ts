@@ -18,4 +18,8 @@ describe('EventComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should add', () => {
+    expect(1+1).toBe(2)
+  })
 });
