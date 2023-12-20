@@ -32,3 +32,32 @@
         }
     }
 }
+
+
+//media queries
+@media screen and (max-width: 812px) {
+    .wrapper {
+        a,p {
+            font-size: 12px;
+        }
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .wrapper {
+        flex-direction: column;
+
+        div {
+            justify-content: center;
+
+            .two {
+                flex-basis: 1;
+            }
+
+            .one {
+                flex-basis: 2;
+            }
+        }
+    }
+}

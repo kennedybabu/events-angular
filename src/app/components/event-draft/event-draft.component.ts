@@ -12,14 +12,20 @@ export class EventDraftComponent implements OnInit {
 
   @Input() event!: any
   url!: any 
+  userId!: string
   DJANGO_SERVER = 'http://127.0.0.1:8000'
-
 
 
   constructor(
     private dialog:MatDialog,
     private router:Router
-    ){}
+    ){
+      let user = localStorage.getItem('user')
+
+      if(user){
+        this.userId = JSON.parse(user).id
+      }
+    }
 
   openDialog() {
     const dialogRef = this.dialog.open(EditEventComponent, {

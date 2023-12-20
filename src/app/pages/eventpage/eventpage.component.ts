@@ -51,21 +51,23 @@ export class EventpageComponent implements OnInit {
 
   ngOnInit(): void {
 
+
     
     
     this.http.get(`${environment.apiBaseUrl}/event/${this.eventId}`).subscribe(
       (res) => {
         this.event = res
-        console.log(this.event)
+        console.log(this.event.author)
         this.eventMonth = new Date(this.event.date).getMonth()
         this.eventDate = new Date(this.event.date).getDate()  
         
         
-        if(this.event == null) {
+        if(this.event?.author?.avatar == null) {
           this.url = this.event?.author?.avatar
         } else {
           this.url = `${this.DJANGO_SERVER}${this.event?.author?.avatar}`
         }
+        
       }
     )
     

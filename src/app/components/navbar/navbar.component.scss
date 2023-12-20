@@ -42,6 +42,26 @@
             cursor: pointer;
         }
     }
+
+    .dropdown {
+
+        .dropdown-menu {
+
+            li { 
+                padding: 5px;
+                font-size: 12px;
+
+                a {
+                    padding: 2px;
+
+                    i {
+                        font-size: inherit;
+                    }
+
+                }
+            }
+        }
+    }
 }
 
 

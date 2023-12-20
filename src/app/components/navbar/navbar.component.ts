@@ -1,6 +1,8 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateEventComponent } from '../create-event/create-event.component';
+import { AuthService } from 'src/app/auth/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -9,7 +11,10 @@ import { CreateEventComponent } from '../create-event/create-event.component';
 })
 export class NavbarComponent {
 
-  constructor(private dialog: MatDialog){}
+  constructor(
+    private dialog: MatDialog,
+    private authService:AuthService,
+    private router:Router){}
   
   @Output() toggleSidenav : EventEmitter<any> = new EventEmitter()
 
@@ -20,6 +25,12 @@ export class NavbarComponent {
 
   toggle(){
     this.toggleSidenav.emit(null)
+  }
+
+
+  logout(){
+    this.authService.logout()
+    this.router.navigate(['/login'])
   }
 
 }
