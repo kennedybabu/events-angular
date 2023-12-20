@@ -7,7 +7,7 @@ import { NotificationService } from './services/shared/notification.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'events';
+  title = 'event';
   notification!: string
   type!: string
   opened: boolean = false

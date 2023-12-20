@@ -119,7 +119,7 @@ export class AuthService {
     return this.http.post(`${environment.apiBaseUrl}/auth/register/`, userObject)
     .pipe(
       map((res:any) => {
-        const access_token = res.access
+        const access_token = res.token
         const refresh_token = res.refresh 
         const user = res.user
 
