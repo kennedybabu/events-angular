@@ -55,6 +55,7 @@ export class HomepageComponent implements OnInit {
 
 
   ngOnInit(): void {
+    // console.log(navigator.geolocation.getCurrentPosition())
   }
 
   onEventUpdate(){

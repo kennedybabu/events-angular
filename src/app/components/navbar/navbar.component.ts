@@ -10,16 +10,29 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
+  userId!: string
 
   constructor(
     private dialog: MatDialog,
     private authService:AuthService,
-    private router:Router){}
+    private router:Router){
+      let user = localStorage.getItem('user')
+
+      if(user) {
+        this.userId = JSON.parse(user).id
+      }
+
+      console.log(this.userId)
+      
+    }
   
   @Output() toggleSidenav : EventEmitter<any> = new EventEmitter()
+  
 
   openDialog() {
-    this.dialog.open(CreateEventComponent);
+    const dialogRef =  this.dialog.open(CreateEventComponent);
+
+    dialogRef.afterClosed().subscribe(result => {})    
   }
 
 
@@ -31,6 +44,10 @@ export class NavbarComponent {
   logout(){
     this.authService.logout()
     this.router.navigate(['/login'])
+  }
+
+  viewProfile(){
+    this.router.navigate([`user-profile/${this.userId}`])
   }
 
 }

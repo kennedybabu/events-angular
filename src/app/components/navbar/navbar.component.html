@@ -1,7 +1,7 @@
 <div class="navbar" style="padding: 0 130px;">
   <div class="container">
     <div style="display: flex;align-items: center;">
-        <p id="burger" (click)="toggle()" style="cursor: pointer;" class="mb-0">burger</p>
+        <p id="burger" (click)="toggle()" style="cursor: pointer;color: #fff;font-size: large;font-weight: bold;" class="mb-0"><i class="bi bi-list"></i></p>
         <i style="color: #fff;font-size: 1.5rem;cursor: pointer;" routerLink="/" class="bi bi-brilliance mr-3" ></i>
         <div class="mx-2">
             <input class="rounded" type="text" placeholder="Search events by categories" style="background-color: #4d4d4d;">
@@ -27,14 +27,14 @@
         <i class="bi bi-bell"></i>
 
         <div>
-            <div type="button"  data-bs-toggle="dropdown" aria-expanded="false" style="width: 35px;height: 35px;border-radius: 100%;background-color: teal;cursor: pointer;">
+            <div  *ngIf="userId" type="button"  data-bs-toggle="dropdown" aria-expanded="false" style="width: 35px;height: 35px;border-radius: 100%;background-color: teal;cursor: pointer;">
 
             </div>
             <div>
                 <!-- <i style="color: #f1f1f1;font-size: large;" class="bi bi-three-dots-vertical" ></i> -->
                 <div class="dropdown">
                     <ul class="dropdown-menu">
-                      <li><a class="dropdown-item"><i class="bi bi-pencil-square" style="color: #ff7555;"></i>view profile</a></li>
+                      <li (click)="viewProfile()"><a class="dropdown-item"><i class="bi bi-pencil-square" style="color: #ff7555;"></i>view profile</a></li>
                       <li (click)="logout()"><a class="dropdown-item"><i class="bi bi-trash3" style="color: rgb(250, 37, 37);"></i> logout</a></li>
                     </ul>
                 </div>

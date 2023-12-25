@@ -114,9 +114,9 @@ body {
                     min-width: 10%;
                 }
 
-                #event {
-                    min-width: 48%!important;
-                }
+                // #event {
+                //     min-width: 48%!important;
+                // }
             }
 
 
@@ -152,15 +152,36 @@ body {
             min-width: 100%!important;
         }
     }
- }
 
 
- @media screen and (max-width: 576px) {
-     .container, .container-sm {
-         max-width: 690px;
-        }
-
-        #event {
-           width: 100%!important;
+    #main-search-bar {     
+    
+        button {
+            margin: 0!important;
         }
     }
+}
+
+
+//  @media screen and (max-width: 576px) {
+//      .container, .container-sm {
+//          max-width: 690px;
+//         }
+
+//         #event {
+//            width: 100%!important;
+//         }
+//     }
+
+
+@media screen and (max-width: 769px){
+    #event {
+        flex-basis: auto;
+    }
+}
+
+@media screen and (max-width: 585px){
+    #event {
+        width: 84vw!important;
+    }
+}

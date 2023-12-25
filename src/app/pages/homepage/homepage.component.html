@@ -7,7 +7,7 @@
                     <app-categories></app-categories>
                 </div>
     
-                <div class="col-md-6 main-content-container">
+                <div class="col-md-6 main-content-container" style="width: 100%;">
                     <div class="shadow-sm rounded mb-5 w-100" id="main-search-bar" style="height: 145px;background-color: #ffffff;padding: 30px 20px;">
                         <h3>Events happening in your city</h3>
                         <div class="row" style="justify-content: center;">
@@ -27,7 +27,7 @@
 
                     <app-buttons></app-buttons>
 
-                    <div class="gap-2" style="display: flex;justify-content: space-between;flex-wrap: wrap;">
+                    <div class="gap-2" style="display: flex;justify-content: space-between;flex-wrap: wrap;width: 100%;">
                         <app-event (eventUpdated)="onEventUpdate()" *ngFor="let event of events" [event]="event"></app-event>                      
                     </div>
                 </div>

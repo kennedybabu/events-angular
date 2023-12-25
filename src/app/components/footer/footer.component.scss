@@ -61,3 +61,14 @@
         }
     }
 }
+
+
+
+@media screen and (max-width: 369px) {
+    .wrapper {
+        #one {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}

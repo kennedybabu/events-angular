@@ -22,7 +22,6 @@ export class AuthInterceptor implements HttpInterceptor {
 
     if(data) {
       if(this.authService.isAuthTokenValid(data.access_token)) {
-        console.log('called -1')
         let modifiedReq = request.clone({
           headers: request.headers.set('Authorization', `Bearer ${data.access_token}`)
         })
@@ -33,7 +32,7 @@ export class AuthInterceptor implements HttpInterceptor {
     return this.authService.generateNewTokens().pipe(
           take(1), 
           switchMap((res: any) => {
-            console.log('gen token')
+            console.log(res, 'generate new tokens')
             let token = res.access
             let modifiedReq = request.clone({
               headers: request.headers.set('Authorization', `Bearer ${token}`)

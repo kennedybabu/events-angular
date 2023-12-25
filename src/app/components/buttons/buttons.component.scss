@@ -1,6 +1,7 @@
 .row {
     margin:0 0 1.5rem 0;
     max-width: 546px;
+    gap: 5px;
 
     li {
         border: none;
@@ -17,5 +18,13 @@
         &:hover {
             background-color: #ff7555;
         }
+    }
+}
+
+
+
+@media screen and (max-width: 585px){
+    li {
+        margin-top: 8px;
     }
 }
