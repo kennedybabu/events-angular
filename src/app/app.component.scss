@@ -1,5 +1,21 @@
 mat-drawer {
     width: 350px;
+
+    mat-nav-list {
+        padding: 1rem;
+        cursor: pointer;
+        font-size: large;
+        transition: all ease .1s;
+
+        i {
+            margin-right: .5rem;
+        }
+
+        &:hover {
+            background-color: rgb(238, 238, 238);
+            color: #ff7755;
+        }
+    }
 }
 
 @media screen and (min-width: 900px) {

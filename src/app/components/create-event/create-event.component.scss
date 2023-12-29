@@ -1,5 +1,5 @@
 .create-event {
-    width: 636px;
+    max-width: 636px;
     padding: 15px;
 
     .img {
@@ -15,7 +15,7 @@
             cursor: pointer;
             color: #313131;
             padding: 12px 20px;
-            width: max-content;
+            max-width: max-content;
             margin: 0 auto;
             transition: all ease .3s;
         }

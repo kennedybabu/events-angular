@@ -7,7 +7,30 @@
 
 <mat-drawer-container style="position: relative;top: 0;bottom: 0;height: 100vh;">
     <mat-drawer mode="over" position="start" [opened]="opened">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, culpa!
+        <div style="display: flex;padding: 1rem;align-items: center;">
+            <i style="font-size: 1.5rem;cursor: pointer;" routerLink="/" class="bi bi-brilliance mr-3" ></i>
+            <h2 class="mx-2 mb-0">Genie</h2>
+        </div>
+        <mat-nav-list routerLink="/">
+            <i class="bi bi-house"></i>
+            <span>Home</span>
+        </mat-nav-list>
+        <mat-nav-list>
+            <i class="bi bi-bullseye"></i>
+            <span>Explore</span>
+        </mat-nav-list>
+        <mat-nav-list>
+            <i class="bi bi-chat"></i>
+            <span>Discussion</span>
+        </mat-nav-list>
+        <mat-nav-list>
+            <i class="bi bi-list"></i>
+            <span>Pages</span>
+        </mat-nav-list>
+        <mat-nav-list>
+            <i class="bi bi-body-text"></i>
+            <span>Blog</span>
+        </mat-nav-list>
     </mat-drawer>
     <mat-dialog-content>
         <app-navbar (toggleSidenav)="toggleSidenav($event)"></app-navbar>

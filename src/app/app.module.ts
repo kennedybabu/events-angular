@@ -15,6 +15,7 @@ import { CategoriesComponent } from './components/categories/categories.componen
 import { FooterComponent } from './components/footer/footer.component';
 import { EventpageComponent } from './pages/eventpage/eventpage.component'
 import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
 
 
 import {MatDialogModule} from '@angular/material/dialog';
@@ -71,7 +72,8 @@ import { CommentObjComponent } from './components/comment-obj/comment-obj.compon
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatListModule
     
   ],
   providers: [
