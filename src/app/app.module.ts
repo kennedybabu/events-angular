@@ -36,6 +36,7 @@ import { EditProfileComponent } from './components/edit-profile/edit-profile.com
 import { CommentObjComponent } from './components/comment-obj/comment-obj.component';
 import { BlogsComponent } from './pages/blogs/blogs.component';
 import { BlogComponent } from './components/blog/blog.component';
+import { BlogViewComponent } from './pages/blog-view/blog-view.component';
 
 
 
@@ -64,7 +65,8 @@ import { BlogComponent } from './components/blog/blog.component';
     EventpageComponent,
     CommentObjComponent,
     BlogsComponent,
-    BlogComponent
+    BlogComponent,
+    BlogViewComponent
   
 
   ],

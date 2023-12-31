@@ -1,0 +1,40 @@
+.container-fluid {
+    background-color: #f1f1f1!important;
+    min-height: 100vh;
+
+    .container {
+        .row {
+            .col-lg-9 {
+                #category {
+                    padding: 20px 0 17px;
+                    align-items: center;
+                    border-bottom: 1px solid #e6e6e6;
+                }
+
+                #category-two {
+                    padding: 20px 0 17px;
+                    align-items: center;
+                    border-bottom: 1px solid #e6e6e6;
+                    border-top: 1px solid #e6e6e6;
+
+                    .d-flex {
+                        li {
+                            cursor: pointer;
+                            transition: all ease .2s;
+
+                            &:hover {
+                                color: #ff7555;
+                            }
+
+                        }
+                    }
+                }
+
+                #sub-header {
+                    margin-top: 27px;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+}
