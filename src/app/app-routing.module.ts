@@ -6,6 +6,7 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { LoginComponent } from './pages/login/login.component';
 import { AuthGuard } from './_guard/auth.guard';
 import { EventpageComponent } from './pages/eventpage/eventpage.component';
+import { BlogsComponent } from './pages/blogs/blogs.component';
 
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path:'user-profile/:id', component: UserProfileComponent, canActivate: [AuthGuard]},
   {path:'auth', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)},
   {path:'event/:id',component: EventpageComponent},
+  {path: 'blogs', component: BlogsComponent},
   {path:'signup', component: SignupComponent},
   {path:'login', component: LoginComponent},
 
