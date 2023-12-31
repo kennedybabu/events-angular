@@ -5,6 +5,12 @@
     .container {
         .row {
             .col-lg-9 {
+                .blog-main-img {
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                }
+                
                 #category {
                     padding: 20px 0 17px;
                     align-items: center;
