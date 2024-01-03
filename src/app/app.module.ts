@@ -37,6 +37,7 @@ import { CommentObjComponent } from './components/comment-obj/comment-obj.compon
 import { BlogsComponent } from './pages/blogs/blogs.component';
 import { BlogComponent } from './components/blog/blog.component';
 import { BlogViewComponent } from './pages/blog-view/blog-view.component';
+import { CreateBlogComponent } from './components/create-blog/create-blog.component';
 
 
 
@@ -66,7 +67,8 @@ import { BlogViewComponent } from './pages/blog-view/blog-view.component';
     CommentObjComponent,
     BlogsComponent,
     BlogComponent,
-    BlogViewComponent
+    BlogViewComponent,
+    CreateBlogComponent
   
 
   ],
