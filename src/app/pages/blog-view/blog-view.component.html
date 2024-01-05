@@ -14,33 +14,14 @@
                 </div>               
                 <div id="sub-header" class="d-flex justify-content-between">
                     <span>1 month ago</span>
-                    <span>By John Doe</span>
+                    <span>By {{ blog?.author?.first_name }} {{ blog?.author?.last_name }}</span>
                 </div>
                 <div id="header">
-                    <h2 style="font-size: 24px;color: #313131;margin-bottom: 25px;font-weight: 600;">Blog Title</h2>
+                    <h2 style="font-size: 24px;color: #313131;margin-bottom: 25px;font-weight: 600;">{{ blog?.title }}</h2>
                 </div>       
                 <div id="body">
                     <p style="font-weight: 400;font-size: 14px;color: #847577;margin-bottom: 15px;line-height: 2;">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. At tenetur vero explicabo eos 
-                        voluptates, labore eius dicta cupiditate, nihil ut voluptatum minus necessitatibus quis 
-                        minima quibusdam sint qui nesciunt reiciendis sit nemo neque sunt magni nam. Voluptas quisquam 
-                        ratione sint ullam eveniet reiciendis vero ducimus tempora repellendus, excepturi, obcaecati quia.
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam architecto nesciunt perspiciatis sapiente porro! Autem 
-                        dignissimos tempore odio repudiandae quia sapiente nihil qui totam saepe, labore at, sit velit! Maiores, mollitia dolore. 
-                        Ut deleniti facilis ipsa quod ea, fugit doloribus eveniet, magnam sit, optio tenetur vero. Ipsum magni est commodi dolorum repellendus, ipsam 
-                        perferendis iusto ab repudiandae, dicta nam quisquam soluta nostrum quibusdam! Magni quis dolor accusantium neque minus aliquid amet exercitationem nemo quaerat pariatur. 
-                        Voluptatem, asperiores repellat in similique corrupti commodi error exercitationem! Voluptatem debitis animi, at nulla in dignissimos magnam qui iure dicta, ex perspiciatis illo placeat voluptas?
-                    </p>
-                    <p style="font-weight: 400;font-size: 14px;color: #847577;margin-bottom: 15px;line-height: 2;">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. At tenetur vero explicabo eos 
-                        voluptates, labore eius dicta cupiditate, nihil ut voluptatum minus necessitatibus quis 
-                        minima quibusdam sint qui nesciunt reiciendis sit nemo neque sunt magni nam. Voluptas quisquam 
-                        ratione sint ullam eveniet reiciendis vero ducimus tempora repellendus, excepturi, obcaecati quia.
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam architecto nesciunt perspiciatis sapiente porro! Autem 
-                        dignissimos tempore odio repudiandae quia sapiente nihil qui totam saepe, labore at, sit velit! Maiores, mollitia dolore. 
-                        Ut deleniti facilis ipsa quod ea, fugit doloribus eveniet, magnam sit, optio tenetur vero. Ipsum magni est commodi dolorum repellendus, ipsam 
-                        perferendis iusto ab repudiandae, dicta nam quisquam soluta nostrum quibusdam! Magni quis dolor accusantium neque minus aliquid amet exercitationem nemo quaerat pariatur. 
-                        Voluptatem, asperiores repellat in similique corrupti commodi error exercitationem! Voluptatem debitis animi, at nulla in dignissimos magnam qui iure dicta, ex perspiciatis illo placeat voluptas?
+                        {{ blog?.body }}
                     </p>
                     <div id="category-two" class="d-flex justify-content-between">
                         <div>Category: Music, Club</div>

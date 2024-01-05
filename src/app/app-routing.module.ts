@@ -16,7 +16,7 @@ const routes: Routes = [
   {path:'auth', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)},
   {path:'event/:id',component: EventpageComponent},
   {path: 'blogs', component: BlogsComponent},
-  {path: 'blog-view', component: BlogViewComponent},
+  {path: 'blog-view/:id', component: BlogViewComponent},
   {path:'signup', component: SignupComponent},
   {path:'login', component: LoginComponent},
 
