@@ -13,6 +13,7 @@ export class UserProfileComponent implements OnInit {
   userObject!: any
   user!: any 
   events!: any
+  currentTile = 'dashboard'
 
 
   constructor(
@@ -45,6 +46,11 @@ export class UserProfileComponent implements OnInit {
           user: this.userObject
         }
     });  
+  }
+
+
+  updateTile(event: any) {
+    console.log(event)
   }
 
 }

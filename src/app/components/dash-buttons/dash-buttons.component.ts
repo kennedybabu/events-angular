@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-dash-buttons',
@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./dash-buttons.component.scss']
 })
 export class DashButtonsComponent {
+  current = 'dashboard'
 
+  @Output() currentTile: EventEmitter<any> = new EventEmitter()
+
+  toggle(tileName: string) {
+    this.current = tileName
+    this.currentTile.emit(tileName)
+  }
 }

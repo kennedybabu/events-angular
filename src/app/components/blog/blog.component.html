@@ -4,7 +4,7 @@
     </div>
     <div class="card__body" style="padding: 20px;">
         <span style="font-size: 12px;color: #847577;">1 month ago</span>
-        <h4 style="font-size: 18px;color: #313131;font-weight: 600;margin-top: 6px;cursor: pointer;" (click)="viewBlogDetails()">{{ blog.title }}</h4>
+        <h4 style="font-size: 18px;color: #313131;font-weight: 600;margin-top: 6px;cursor: pointer;" (click)="viewBlogDetails()" class="accent-color">{{ blog.title }}</h4>
         <p style="font-size: 14px;color: #847577;margin-top: 17px;margin-bottom: 0;">{{ blog.body | truncate: 50 }}</p>
         <div class="d-flex justify-content-between mt-5">
             <div style="color: #847577;">

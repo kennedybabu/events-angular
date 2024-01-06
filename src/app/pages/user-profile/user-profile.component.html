@@ -59,26 +59,71 @@
                     </div>
                 </div>
                 <div class="col-md-12 col-lg-7 col-xl-8">
-                    <app-dash-buttons></app-dash-buttons>
-                    <app-stats></app-stats>
-                    <div class="my-4 shadow-sm rounded" style="background-color: #ffff;">
-                        <div class="header-wrapper" style="display: flex;justify-content: space-between;align-items: center;border-bottom: 1px solid #e6e6e6;padding: 12px;">
-                            <h3 style="margin-bottom: 0;font-weight: bold;font-size: 18px;">Events</h3>
-                            <button style="background-color: #ff7555;border-radius: 5px;color: #ffff;height: 40px;line-height: 14px;border: none;padding: 0 13px;">Create</button>
-                        </div>
-                        <div style="display: flex;align-items: center;padding: 20px;border-bottom: 1px solid #e6e6e6;">
-                            <div>
-                                <input type="text" placeholder="Search event" style="border: none;">
-                            </div>
-                            <div>
-                                
-                            </div>
-                            <div>
+                    <app-dash-buttons (currentTile)="updateTile($event)"></app-dash-buttons>
 
+                    <!-- <div id="dash">
+                        <app-stats></app-stats>
+                        <div class="my-4 shadow-sm rounded" style="background-color: #ffff;">
+                            <div class="header-wrapper" style="display: flex;justify-content: space-between;align-items: center;border-bottom: 1px solid #e6e6e6;padding: 12px;">
+                                <h3 style="margin-bottom: 0;font-weight: bold;font-size: 18px;">Events</h3>
+                                <button style="background-color: #ff7555;border-radius: 5px;color: #ffff;height: 40px;line-height: 14px;border: none;padding: 0 13px;">Create</button>
+                            </div>
+                            <div style="display: flex;align-items: center;padding: 20px;border-bottom: 1px solid #e6e6e6;">
+                                <div>
+                                    <input type="text" placeholder="Search event" style="border: none;">
+                                </div>
+                                <div>
+                                    
+                                </div>
+                                <div>
+    
+                                </div>
+                            </div>
+                            <div style="padding: 20px;" class="d-flex gap-3 flex-wrap">                      
+                                <app-event-draft [event]="event" *ngFor="let event of events" ></app-event-draft>                                            
                             </div>
                         </div>
-                        <div style="padding: 20px;" class="d-flex gap-3 flex-wrap">                      
-                            <app-event-draft [event]="event" *ngFor="let event of events" ></app-event-draft>                                            
+                    </div>  -->
+
+                    <div id="about" class="my-4 shadow-sm rounded" style="background-color: #ffff;">
+                        <div style="display: flex;justify-content: space-between;align-items: center;border-bottom: 1px solid #e6e6e6;padding: 12px;">
+                            <h3 class="mb-0" style="font-weight: bold;">About</h3>
+                            <button style="background-color: #ff7555;border-radius: 5px;color: #ffff;height: 40px;line-height: 14px;border: none;padding: 0 13px;">Edit</button>
+                        </div>
+                        <div style="padding: 12px;border-bottom: 1px solid #e6e6e6;">
+                            <h4 class="mb-0" style="font-weight: bold;">Name</h4>
+                            <h2 style="font-weight: bold;color: #847577;">John Doe</h2>
+                        </div>
+                        <div style="padding: 12px;border-bottom: 1px solid #e6e6e6;">
+                            <h4 style="font-weight: bold;">Tell us about yourself and let people know who you are</h4>
+                            <p style="color: #847577;line-height: 2;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt minus illo cumque quos tempore repellendus quae unde iste atque rem!</p>
+                        </div>
+                        <div style="padding: 12px;border-bottom: 1px solid #e6e6e6;">
+                            <h4 style="font-weight: bold;">Address</h4>
+                            <p>Lorem ipsum dolor sit.</p>
+                        </div>
+                        <div style="padding: 12px;">
+                            <h4>Find me on</h4>
+                            <div class="profile-social-links" style="justify-content: start;">
+                                <div class="icon hover-actions">
+                                    <i class="bi bi-facebook"></i>
+                                </div>
+                                <div class="icon hover-actions">
+                                    <i class="bi bi-instagram"></i>
+                                </div>
+                                <div class="icon hover-actions">
+                                    <i class="bi bi-twitter-x"></i>
+                                </div>
+                                <div class="icon hover-actions">
+                                    <i class="bi bi-linkedin"></i>
+                                </div>
+                                <div class="icon hover-actions">
+                                    <i class="bi bi-youtube"></i>
+                                </div>
+                                <div class="icon hover-actions">
+                                    <i class="bi bi-dribbble"></i>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

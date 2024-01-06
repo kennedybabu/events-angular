@@ -21,8 +21,6 @@ export class NavbarComponent {
       if(user) {
         this.userId = JSON.parse(user).id
       }
-
-      console.log(this.userId)
       
     }
   
