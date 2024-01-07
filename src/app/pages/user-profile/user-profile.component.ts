@@ -43,6 +43,8 @@ export class UserProfileComponent implements OnInit {
 
     this.http.get(`${environment.apiBaseUrl}/blog/?author__public_id=${this.user.id}`).subscribe((res: any) => {    
       this.blogs = res.results
+
+      console.log(this.blogs)
     })
 
   }

@@ -88,7 +88,7 @@
                     <div *ngIf="currentTile === 'about'" id="about" class="my-4 shadow-sm rounded" style="background-color: #ffff;">
                         <div style="display: flex;justify-content: space-between;align-items: center;border-bottom: 1px solid #e6e6e6;padding: 12px;">
                             <h3 class="mb-0" style="font-weight: bold;">About</h3>
-                            <button style="background-color: #ff7555;border-radius: 5px;color: #ffff;height: 40px;line-height: 14px;border: none;padding: 0 13px;">Edit</button>
+                            <button (click)="openDialog()" style="background-color: #ff7555;border-radius: 5px;color: #ffff;height: 40px;line-height: 14px;border: none;padding: 0 13px;">Edit</button>
                         </div>
                         <div style="padding: 12px;border-bottom: 1px solid #e6e6e6;">
                             <h4 class="mb-0" style="font-weight: bold;">Name</h4>
