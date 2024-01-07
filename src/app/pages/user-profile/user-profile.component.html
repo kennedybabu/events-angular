@@ -61,7 +61,7 @@
                 <div class="col-md-12 col-lg-7 col-xl-8">
                     <app-dash-buttons (currentTile)="updateTile($event)"></app-dash-buttons>
 
-                    <!-- <div id="dash">
+                    <div id="dash" *ngIf="currentTile === 'dashboard'">
                         <app-stats></app-stats>
                         <div class="my-4 shadow-sm rounded" style="background-color: #ffff;">
                             <div class="header-wrapper" style="display: flex;justify-content: space-between;align-items: center;border-bottom: 1px solid #e6e6e6;padding: 12px;">
@@ -83,9 +83,9 @@
                                 <app-event-draft [event]="event" *ngFor="let event of events" ></app-event-draft>                                            
                             </div>
                         </div>
-                    </div>  -->
+                    </div> 
 
-                    <div id="about" class="my-4 shadow-sm rounded" style="background-color: #ffff;">
+                    <div *ngIf="currentTile === 'about'" id="about" class="my-4 shadow-sm rounded" style="background-color: #ffff;">
                         <div style="display: flex;justify-content: space-between;align-items: center;border-bottom: 1px solid #e6e6e6;padding: 12px;">
                             <h3 class="mb-0" style="font-weight: bold;">About</h3>
                             <button style="background-color: #ff7555;border-radius: 5px;color: #ffff;height: 40px;line-height: 14px;border: none;padding: 0 13px;">Edit</button>
@@ -125,6 +125,16 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+
+                    <div *ngIf="currentTile === 'blogs'" id="about" class="my-4 shadow-sm rounded" style="background-color: #ffff;">
+                        <div style="display: flex;justify-content: space-between;align-items: center;border-bottom: 1px solid #e6e6e6;padding: 12px;">
+                            <h3 class="mb-0" style="font-weight: bold;">All Blogs</h3>
+                            <button style="background-color: #ff7555;border-radius: 5px;color: #ffff;height: 40px;line-height: 14px;border: none;padding: 0 13px;">Add Blog</button>
+                        </div>
+                        <div class="p-2">
+                          <app-blog-draft [blog]="blog" *ngFor="let blog of blogs"></app-blog-draft>                         
+                        </div>        
                     </div>
                 </div>
             </div>

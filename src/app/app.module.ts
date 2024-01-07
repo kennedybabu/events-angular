@@ -39,6 +39,7 @@ import { BlogComponent } from './components/blog/blog.component';
 import { BlogViewComponent } from './pages/blog-view/blog-view.component';
 import { CreateBlogComponent } from './components/create-blog/create-blog.component';
 import { TruncatePipe } from './pipes/truncate.pipe';
+import { BlogDraftComponent } from './components/blog-draft/blog-draft.component';
 
 
 
@@ -70,7 +71,8 @@ import { TruncatePipe } from './pipes/truncate.pipe';
     BlogComponent,
     BlogViewComponent,
     CreateBlogComponent,
-    TruncatePipe
+    TruncatePipe,
+    BlogDraftComponent
   
 
   ],
