@@ -41,11 +41,7 @@ export class UserProfileComponent implements OnInit {
       this.events = res.filter((event: any) => event.author.id === this.user.id)
     })
 
-    this.http.get(`${environment.apiBaseUrl}/blog/?author__public_id=${this.user.id}`).subscribe((res: any) => {    
-      this.blogs = res.results
-
-      console.log(this.blogs)
-    })
+    this.getBlogs()
 
   }
 
@@ -60,6 +56,18 @@ export class UserProfileComponent implements OnInit {
 
   updateTile(event: any) {
     this.currentTile = event
+  }
+
+  onBlogsUpdate(){
+    this.getBlogs()
+  }
+
+
+  //functions
+  getBlogs(){
+    this.http.get(`${environment.apiBaseUrl}/blog/?author__public_id=${this.user.id}`).subscribe((res: any) => {    
+      this.blogs = res.results
+    })
   }
 
 }
