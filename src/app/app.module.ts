@@ -16,6 +16,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { EventpageComponent } from './pages/eventpage/eventpage.component'
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 import {MatDialogModule} from '@angular/material/dialog';
@@ -41,6 +42,8 @@ import { CreateBlogComponent } from './components/create-blog/create-blog.compon
 import { TruncatePipe } from './pipes/truncate.pipe';
 import { BlogDraftComponent } from './components/blog-draft/blog-draft.component';
 import { EditBlogComponent } from './components/edit-blog/edit-blog.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
+import { LoaderInterceptor } from './interceptors/loader';
 
 
 
@@ -74,7 +77,8 @@ import { EditBlogComponent } from './components/edit-blog/edit-blog.component';
     CreateBlogComponent,
     TruncatePipe,
     BlogDraftComponent,
-    EditBlogComponent
+    EditBlogComponent,
+    SpinnerComponent
   
 
   ],
@@ -87,13 +91,19 @@ import { EditBlogComponent } from './components/edit-blog/edit-blog.component';
     ReactiveFormsModule,
     HttpClientModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatProgressSpinnerModule
     
   ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoaderInterceptor,
       multi: true
     }
   ],
