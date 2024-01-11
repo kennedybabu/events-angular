@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatDialogRef } from '@angular/material/dialog';
 import { CreateBlogService } from 'src/app/services/blog/create-blog.service';
+import { NotificationService } from 'src/app/services/shared/notification.service';
 
 @Component({
   selector: 'app-create-blog',
@@ -9,7 +11,10 @@ import { CreateBlogService } from 'src/app/services/blog/create-blog.service';
 })
 export class CreateBlogComponent {
 
-  constructor(private createBlogService:CreateBlogService){
+  constructor(
+    private createBlogService:CreateBlogService,
+    public dialogRef: MatDialogRef<CreateBlogComponent>,
+    private notificatonService: NotificationService){
     
   }  
 
@@ -22,8 +27,11 @@ export class CreateBlogComponent {
 
 
   onFormSubmit(){
-    this.createBlogService.createBlog(this.blogForm.value).subscribe((res) => {
-      console.log(res)
+    this.createBlogService.createBlog(this.blogForm.value, this.blogBanner).subscribe((res) => {
+      if(res.id) {
+        this.dialogRef.close()
+        this.notificatonService.sendSuccessNofification('Blog Created', 'success')
+      }
     })
   }
 

@@ -1,6 +1,6 @@
 <div style="border: 1px solid #a7a8aa8c; cursor: pointer;" class="rounded d-flex align-items-center my-2">
     <div (click)="viewBlogDetails()" class="col-xl-8 col-lg-8 col-md-6 d-flex align-items-center" style="border-right: 1px solid #a7a8aa;padding: 4px;">
-        <div style="width: 40px;aspect-ratio: 1;background-color: #ff7555;" class="rounded">
+        <div style="width: 40px;aspect-ratio: 1;background-position: center;background-size: cover;" [style]="{'background-image': 'url('+ blog.banner_image +')'}"  class="rounded">
 
         </div>
         <a class="mx-1" style="font-weight: bold;text-decoration: none;color: inherit;">{{ blog.title }}</a>

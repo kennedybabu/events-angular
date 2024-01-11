@@ -17,12 +17,16 @@ export class CreateBlogService {
     }
   }
 
-  createBlog(formValue: any): Observable<any> {
-    const data = {
-      body: formValue.body,
-      author: this.userId,
-      title: formValue.title
-    }
-    return this.http.post(`${environment.apiBaseUrl}/blog/`, data)
+  createBlog(formValue: any, blogImage: any): Observable<any> {
+    const formData = new FormData()
+
+    formData.append('title', formValue.title)
+    formData.append('body', formValue.body)
+    formData.append('author', this.userId)
+    formData.append('banner_image', blogImage)
+      
+    return this.http.post(`${environment.apiBaseUrl}/blog/`, formData)
   }
 }
+
+

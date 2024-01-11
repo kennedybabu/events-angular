@@ -5,7 +5,7 @@
                 <app-categories></app-categories>
             </div>
             <div class="col-lg-9 col-md-8" style="padding: 10px;">
-                <div class="blog-main-img" style="height: 400px;border-radius: 5px 5px 0 0;background-image: url(../../../assets/stars.jpg);">
+                <div class="blog-main-img" style="height: 400px;border-radius: 5px 5px 0 0;" [style]="{'background-image': 'url(' + blog?.banner_image +')'}">
 
                 </div>
                 <div id="category" class="d-flex justify-content-between">

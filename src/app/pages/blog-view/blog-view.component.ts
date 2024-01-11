@@ -24,7 +24,9 @@ export class BlogViewComponent implements OnInit {
 
     this.getBlogDetailsService.getDetails(this.blogId).subscribe((res) => {
       this.blog = res
+      console.log(this.blog.banner_image)
     })
+
 
   }
 

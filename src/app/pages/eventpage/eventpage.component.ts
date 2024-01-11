@@ -49,15 +49,11 @@ export class EventpageComponent implements OnInit {
   }
 
 
-  ngOnInit(): void {
-
-
-    
+  ngOnInit(): void {  
     
     this.http.get(`${environment.apiBaseUrl}/event/${this.eventId}`).subscribe(
       (res) => {
         this.event = res
-        console.log(this.event.author)
         this.eventMonth = new Date(this.event.date).getMonth()
         this.eventDate = new Date(this.event.date).getDate()  
         
