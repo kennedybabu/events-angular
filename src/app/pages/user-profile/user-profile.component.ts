@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { EditBlogComponent } from 'src/app/components/edit-blog/edit-blog.component';
 import { EditProfileComponent } from 'src/app/components/edit-profile/edit-profile.component';
 import { GetBlogsService } from 'src/app/services/blog/get-blogs.service';
 import { environment } from 'src/environment/environment';
@@ -51,6 +52,19 @@ export class UserProfileComponent implements OnInit {
           user: this.userObject
         }
     });  
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.getBlogs()
+    }) 
+  }
+
+  openBlogDialog(event: any) {
+    const dialogRef = this.dialog.open(EditBlogComponent, {
+        data: {
+          blog: event
+        }
+    });  
+
   }
 
 

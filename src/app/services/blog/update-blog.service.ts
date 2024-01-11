@@ -7,14 +7,23 @@ import { environment } from 'src/environment/environment';
   providedIn: 'root'
 })
 export class UpdateBlogService {
+  userId: string | undefined
+  constructor(private http:HttpClient) { 
+    let user = localStorage.getItem('user')
 
-  constructor(private http:HttpClient) { }
+    if(user) {
+      this.userId = JSON.parse(user).id
+    }
+  }
 
-  updateBlog(formValue: any, updatedImage: any): Observable<any> {
+  updateBlog(formValue: any, updatedImage: any, id: string): Observable<any> {
     let data = {
+      "title": formValue.title,
+      "body": formValue.body,  
+      "author": this.userId   
 
     }
     
-    return this.http.put(`${environment.apiBaseUrl}/blog/`, data)
+    return this.http.put(`${environment.apiBaseUrl}/blog/${id}/`, data)
   }
 }

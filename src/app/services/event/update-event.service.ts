@@ -18,7 +18,6 @@ export class UpdateEventService {
   }
 
   updateEvent(formValue: any, id: any): Observable<any> { 
-    console.log(formValue)
     let object = {
       "body": formValue.body,
       "date": formValue.date,

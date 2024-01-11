@@ -18,6 +18,7 @@ export class BlogDraftComponent {
 
   @Input() blog!: any
   @Output() blogsUpdated = new EventEmitter<boolean>()
+  @Output() updateSelectedBlog = new EventEmitter<any>()
 
   viewBlogDetails(){
     this.router.navigate([`blog-view/${this.blog?.id}`])
@@ -29,6 +30,12 @@ export class BlogDraftComponent {
       this.blogsUpdated.emit(true)
       this.notificationService.sendSuccessNofification('blog deleted', 'success')
     })
+  }
+
+
+  onUpdateBlog(){
+    this.updateSelectedBlog.emit(this.blog)
+    console.log(this.blog)
   }
 
 }

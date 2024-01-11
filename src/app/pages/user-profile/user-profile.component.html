@@ -133,7 +133,7 @@
                             <button style="background-color: #ff7555;border-radius: 5px;color: #ffff;height: 40px;line-height: 14px;border: none;padding: 0 13px;">Add Blog</button>
                         </div>
                         <div class="p-2">
-                          <app-blog-draft (blogsUpdated)="onBlogsUpdate()" [blog]="blog" *ngFor="let blog of blogs"></app-blog-draft>                         
+                          <app-blog-draft (updateSelectedBlog)="openBlogDialog($event)"  (blogsUpdated)="onBlogsUpdate()" [blog]="blog" *ngFor="let blog of blogs"></app-blog-draft>                         
                         </div>        
                     </div>
                 </div>
