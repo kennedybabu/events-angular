@@ -178,6 +178,10 @@ body {
     #event {
         flex-basis: auto;
     }
+
+    .left {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 585px){
