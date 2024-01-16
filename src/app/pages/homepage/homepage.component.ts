@@ -40,7 +40,13 @@ export class HomepageComponent implements OnInit {
   fetchEvents(){
     this.http.get(`${environment.apiBaseUrl}/event/`).subscribe((res) => {
       this.events = res 
+      console.log(this.events)
     })
+
+
+    // this.http.get(`${environment.apiBaseUrl}/event/?due=false`).subscribe((res) => {
+    //   console.log(res, '...')
+    // })
   }
 
   openDialog() {

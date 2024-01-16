@@ -8,6 +8,7 @@ import { AuthGuard } from './_guard/auth.guard';
 import { EventpageComponent } from './pages/eventpage/eventpage.component';
 import { BlogsComponent } from './pages/blogs/blogs.component';
 import { BlogViewComponent } from './pages/blog-view/blog-view.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path: 'blog-view/:id', component: BlogViewComponent},
   {path:'signup', component: SignupComponent},
   {path:'login', component: LoginComponent},
+  {path: '**', component: NotFoundComponent}
 
 ];
 

@@ -44,6 +44,7 @@ import { BlogDraftComponent } from './components/blog-draft/blog-draft.component
 import { EditBlogComponent } from './components/edit-blog/edit-blog.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { LoaderInterceptor } from './interceptors/loader';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 
 
@@ -78,7 +79,8 @@ import { LoaderInterceptor } from './interceptors/loader';
     TruncatePipe,
     BlogDraftComponent,
     EditBlogComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    NotFoundComponent
   
 
   ],
